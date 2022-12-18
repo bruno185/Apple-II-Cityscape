@@ -165,8 +165,14 @@ ok39
 
 * plot
 
-nextligne
+
     ldx hauteur
+    stx savhauteur  
+    ldy xstart 
+    sty savxtart 
+
+nextligne
+    ldx hauteur     ; set ptr to line
     lda lo,x 
     sta ptr
     lda hi,x 
@@ -175,16 +181,20 @@ nextligne
     lda #$80
 plotloop
     sta (ptr),y
-    iny 
-    cpy xend
-    bcc plotloop
-    beq plotloop
-
     lda hauteur
     clc
     adc interligne
     sta hauteur
     cmp #191
+    bcc nextligne
+    beq nextligne
+    jsr rdkey
+
+    lda savhauteur
+    sta hauteur
+    inc xstart
+    ldy xstart
+    cpy xend
     bcc nextligne
     beq nextligne
 
@@ -405,7 +415,9 @@ value   hex 00
 passe   hex 00
 xstart  hex 00
 xend    hex 00
+savxtart    hex 00
 hauteur hex 00
+savhauteur  hex 00
 interligne  hex 00
 
 trois   hex 0300
