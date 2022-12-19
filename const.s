@@ -30,6 +30,7 @@ prompt  equ $33
 *
 * ROM switches
 *
+settext  equ $c051      ; display text
 stor80   equ $C001
 graphics equ $C050
 mixoff   equ $C052      ; = C053 MIXSET 
