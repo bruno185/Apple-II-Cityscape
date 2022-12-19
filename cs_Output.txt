@@ -104,15 +104,15 @@
   101 |  1    cs.s     56 | Code        | 11 |         |    3 | 00/8005 : 20 58 FC    |              jsr   {$FC58}         ; clear screen
   102 |  1    cs.s     57 | Empty       | 11 |         |    0 | 00/8008               |                                    
   103 |  1    cs.s     58 | Code        | 11 |         |    2 | 00/8008 : A0 82       |              ldy   #>welcome       ; print welcome
-  104 |  1    cs.s     59 | Code        | 11 |         |    2 | 00/800A : A9 9C       |              lda   #<welcome       
+  104 |  1    cs.s     59 | Code        | 11 |         |    2 | 00/800A : A9 9E       |              lda   #<welcome       
   105 |  1    cs.s     60 | Code        | 11 |         |    3 | 00/800C : 20 3A DB    |              jsr   {$DB3A}         
   106 |  1    cs.s     61 | Code        | 11 |         |    2 | 00/800F : A0 82       |              ldy   #>choix         ; print choice string
-  107 |  1    cs.s     62 | Code        | 11 |         |    2 | 00/8011 : A9 C0       |              lda   #<choix         
+  107 |  1    cs.s     62 | Code        | 11 |         |    2 | 00/8011 : A9 C2       |              lda   #<choix         
   108 |  1    cs.s     63 | Code        | 11 |         |    3 | 00/8013 : 20 3A DB    |              jsr   {$DB3A}         
   109 |  1    cs.s     64 | Code        | 11 |         |    3 | 00/8016 : 20 0C FD    |              jsr   {$FD0C}         ; read user choice
   110 |  1    cs.s     65 | Code        | 11 |         |    1 | 00/8019 : 48          |              pha                   
   111 |  1    cs.s     66 | Code        | 11 |         |    3 | 00/801A : 20 69 81    |              jsr   initrandom      ; init random with $4e/$4f
-  112 |  1    cs.s     67 | Code        | 11 |         |    3 | 00/801D : 20 25 82    |              jsr   savfac          
+  112 |  1    cs.s     67 | Code        | 11 |         |    3 | 00/801D : 20 27 82    |              jsr   savfac          
   113 |  1    cs.s     68 | Code        | 11 |         |    1 | 00/8020 : 68          |              pla                   
   114 |  1    cs.s     69 | Code        | 11 |         |    2 | 00/8021 : C9 D3       |              cmp   #"S"            ; slow ?
   115 |  1    cs.s     70 | Code        | 11 |         |    2 | 00/8023 : F0 1A       |              beq   slow            
@@ -133,29 +133,29 @@
   130 |  1    cs.s     85 | Empty       | 11 |         |    0 | 00/803F               |                                    
   131 |  1    cs.s     86 | Empty       | 11 |         |    0 | 00/803F               | slow                               
   132 |  1    cs.s     87 | Code        | 11 |         |    2 | 00/803F : A9 23       |              lda   #35             
-  133 |  1    cs.s     88 | Code        | 11 |         |    3 | 00/8041 : 8D 8C 82    |              sta   speed           
+  133 |  1    cs.s     88 | Code        | 11 |         |    3 | 00/8041 : 8D 8E 82    |              sta   speed           
   134 |  1    cs.s     89 | Code        | 11 |         |    3 | 00/8044 : 4C 4F 80    |              jmp   debut2          
   135 |  1    cs.s     90 | Empty       | 11 |         |    0 | 00/8047               | fast                               
   136 |  1    cs.s     91 | Code        | 11 |         |    2 | 00/8047 : A9 01       |              lda   #01             
-  137 |  1    cs.s     92 | Code        | 11 |         |    3 | 00/8049 : 8D 8C 82    |              sta   speed           
+  137 |  1    cs.s     92 | Code        | 11 |         |    3 | 00/8049 : 8D 8E 82    |              sta   speed           
   138 |  1    cs.s     93 | Code        | 11 |         |    3 | 00/804C : 4C 4F 80    |              jmp   debut2          
   139 |  1    cs.s     94 | Empty       | 11 |         |    0 | 00/804F               |                                    
   140 |  1    cs.s     95 | Empty       | 11 |         |    0 | 00/804F               | debut2                             
   141 |  1    cs.s     96 | Empty       | 11 |         |    0 | 00/804F               |                                    
-  142 |  1    cs.s     97 | Code        | 11 |         |    3 | 00/804F : 20 85 81    |              jsr   fondbleu        
-  143 |  1    cs.s     98 | Code        | 11 |         |    3 | 00/8052 : 20 78 81    |              jsr   initHGR         
+  142 |  1    cs.s     97 | Code        | 11 |         |    3 | 00/804F : 20 87 81    |              jsr   fondbleu        
+  143 |  1    cs.s     98 | Code        | 11 |         |    3 | 00/8052 : 20 7A 81    |              jsr   initHGR         
   144 |  1    cs.s     99 | Empty       | 11 |         |    0 | 00/8055               |                                    
   145 |  1    cs.s    100 | Empty       | 11 |         |    0 | 00/8055               | init                               
   146 |  1    cs.s    101 | Code        | 11 |         |    2 | 00/8055 : A9 00       |              lda   #$00            
-  147 |  1    cs.s    102 | Code        | 11 |         |    3 | 00/8057 : 8D 86 82    |              sta   passe           
-  148 |  1    cs.s    103 | Code        | 11 |         |    3 | 00/805A : 8D 88 82    |              sta   xend            
+  147 |  1    cs.s    102 | Code        | 11 |         |    3 | 00/8057 : 8D 88 82    |              sta   passe           
+  148 |  1    cs.s    103 | Code        | 11 |         |    3 | 00/805A : 8D 8A 82    |              sta   xend            
   149 |  1    cs.s    104 | Code        | 11 |         |    2 | 00/805D : A9 00       |              lda   #$00            
-  150 |  1    cs.s    105 | Code        | 11 |         |    3 | 00/805F : 8D 87 82    |              sta   xstart          
-  151 |  1    cs.s    106 | Code        | 11 |         |    3 | 00/8062 : 20 30 82    |              jsr   getfac          
+  150 |  1    cs.s    105 | Code        | 11 |         |    3 | 00/805F : 8D 89 82    |              sta   xstart          
+  151 |  1    cs.s    106 | Code        | 11 |         |    3 | 00/8062 : 20 32 82    |              jsr   getfac          
   152 |  1    cs.s    107 | Empty       | 11 |         |    0 | 00/8065               |                                    
   153 |  1    cs.s    108 | Empty       | 11 |         |    0 | 00/8065               | bigloop                            
   154 |  1    cs.s    109 | Code        | 11 |         |    2 | 00/8065 : A9 00       |              lda   #$00            
-  155 |  1    cs.s    110 | Code        | 11 |         |    3 | 00/8067 : 8D 87 82    |              sta   xstart          
+  155 |  1    cs.s    110 | Code        | 11 |         |    3 | 00/8067 : 8D 89 82    |              sta   xstart          
   156 |  1    cs.s    111 | Empty       | 11 |         |    0 | 00/806A               |                                    
   157 |  1    cs.s    112 | Empty       | 11 |         |    0 | 00/806A               | mloop                              
   158 |  1    cs.s    113 | Comment     | 11 |         |    0 | 00/806A               | * J = I +  INT (RND (1) * 3) + 2
@@ -164,12 +164,12 @@
   161 |  1    cs.s    116 | Empty       | 11 |         |    0 | 00/806F               |                                    
   162 |  1    cs.s    117 | Comment     | 11 |         |    0 | 00/806F               | **************
   163 |  1    cs.s    118 | Code        | 11 |         |    2 | 00/806F : A0 82       |              ldy   #>myfac         
-  164 |  1    cs.s    119 | Code        | 11 |         |    2 | 00/8071 : A2 8F       |              ldx   #<myfac         
+  164 |  1    cs.s    119 | Code        | 11 |         |    2 | 00/8071 : A2 91       |              ldx   #<myfac         
   165 |  1    cs.s    120 | Code        | 11 |         |    3 | 00/8073 : 20 2B EB    |              jsr   {$EB2B}         ; move fac => memory (packed) = RND
   166 |  1    cs.s    121 | Code        | 11 |         |    2 | 00/8076 : A0 03       |              ldy   #3              
   167 |  1    cs.s    122 | Code        | 11 |         |    3 | 00/8078 : 20 01 E3    |              jsr   {$E301}         ; fac = 3
   168 |  1    cs.s    123 | Code        | 11 |         |    2 | 00/807B : A0 82       |              ldy   #>myfac         
-  169 |  1    cs.s    124 | Code        | 11 |         |    2 | 00/807D : A9 8F       |              lda   #<myfac         
+  169 |  1    cs.s    124 | Code        | 11 |         |    2 | 00/807D : A9 91       |              lda   #<myfac         
   170 |  1    cs.s    125 | Code        | 11 |         |    3 | 00/807F : 20 7F E9    |              jsr   {$E97F}         ; move number in memory (Y,A) to ARG and mult. result in fac.
   171 |  1    cs.s    126 | Comment     | 11 |         |    0 | 00/8082               |     ;jsr prnfaq
   172 |  1    cs.s    127 | Empty       | 11 |         |    0 | 00/8082               |                                    
@@ -189,14 +189,14 @@
   186 |  1    cs.s    141 | Code        | 11 |         |    1 | 00/8086 : 18          |              clc                   
   187 |  1    cs.s    142 | Code        | 11 |         |    2 | 00/8087 : 69 02       |              adc   #$02            ; add 2
   188 |  1    cs.s    143 | Code        | 11 |         |    1 | 00/8089 : 18          |              clc                   
-  189 |  1    cs.s    144 | Code        | 11 |         |    3 | 00/808A : 6D 87 82    |              adc   xstart          
-  190 |  1    cs.s    145 | Code        | 11 |         |    3 | 00/808D : 8D 88 82    |              sta   xend            ; xend = xstart + rnd*3 +2
+  189 |  1    cs.s    144 | Code        | 11 |         |    3 | 00/808A : 6D 89 82    |              adc   xstart          
+  190 |  1    cs.s    145 | Code        | 11 |         |    3 | 00/808D : 8D 8A 82    |              sta   xend            ; xend = xstart + rnd*3 +2
   191 |  1    cs.s    146 | Empty       | 11 |         |    0 | 00/8090               |                                    
   192 |  1    cs.s    147 | Comment     | 11 |         |    0 | 00/8090               | *if J>39 then J = 39
   193 |  1    cs.s    148 | Code        | 11 |         |    2 | 00/8090 : C9 27       |              cmp   #39             
   194 |  1    cs.s    149 | Code        | 11 |         |    2 | 00/8092 : 90 05       |              bcc   ok39            
   195 |  1    cs.s    150 | Code        | 11 |         |    2 | 00/8094 : A9 27       |              lda   #39             
-  196 |  1    cs.s    151 | Code        | 11 |         |    3 | 00/8096 : 8D 88 82    |              sta   xend            
+  196 |  1    cs.s    151 | Code        | 11 |         |    3 | 00/8096 : 8D 8A 82    |              sta   xend            
   197 |  1    cs.s    152 | Empty       | 11 |         |    0 | 00/8099               | ok39                               
   198 |  1    cs.s    153 | Comment     | 11 |         |    0 | 00/8099               |     ;jsr prnstartend
   199 |  1    cs.s    154 | Empty       | 11 |         |    0 | 00/8099               |                                    
@@ -205,97 +205,97 @@
   202 |  1    cs.s    157 | Empty       | 11 |         |    0 | 00/8099               |                                    
   203 |  1    cs.s    158 | Code        | 11 |         |    3 | 00/8099 : 20 AE EF    |              jsr   {$EFAE}         ; fac = random number (> 0 et < 1)
   204 |  1    cs.s    159 | Code        | 11 |         |    2 | 00/809C : A0 82       |              ldy   #>myfac         
-  205 |  1    cs.s    160 | Code        | 11 |         |    2 | 00/809E : A2 8F       |              ldx   #<myfac         
+  205 |  1    cs.s    160 | Code        | 11 |         |    2 | 00/809E : A2 91       |              ldx   #<myfac         
   206 |  1    cs.s    161 | Code        | 11 |         |    3 | 00/80A0 : 20 2B EB    |              jsr   {$EB2B}         ; move fac => memory (packed) = RND
   207 |  1    cs.s    162 | Empty       | 11 |         |    0 | 00/80A3               |                                    
   208 |  1    cs.s    163 | Code        | 11 |         |    2 | 00/80A3 : A9 04       |              lda   #4              
   209 |  1    cs.s    164 | Code        | 11 |         |    1 | 00/80A5 : 38          |              sec                   
-  210 |  1    cs.s    165 | Code        | 11 |         |    3 | 00/80A6 : ED 86 82    |              sbc   passe           ; A = (4 - N)
-  211 |  1    cs.s    166 | Code        | 11 |         |    3 | 00/80A9 : 8D 8B 82    |              sta   interligne      
+  210 |  1    cs.s    165 | Code        | 11 |         |    3 | 00/80A6 : ED 88 82    |              sbc   passe           ; A = (4 - N)
+  211 |  1    cs.s    166 | Code        | 11 |         |    3 | 00/80A9 : 8D 8D 82    |              sta   interligne      
   212 |  1    cs.s    167 | Code        | 11 |         |    1 | 00/80AC : A8          |              tay                   
   213 |  1    cs.s    168 | Code        | 11 |         |    3 | 00/80AD : 20 01 E3    |              jsr   {$E301}         ; fac = (4 - N)
   214 |  1    cs.s    169 | Code        | 11 |         |    2 | 00/80B0 : A0 82       |              ldy   #>myfac         
-  215 |  1    cs.s    170 | Code        | 11 |         |    2 | 00/80B2 : A9 8F       |              lda   #<myfac         
+  215 |  1    cs.s    170 | Code        | 11 |         |    2 | 00/80B2 : A9 91       |              lda   #<myfac         
   216 |  1    cs.s    171 | Code        | 11 |         |    3 | 00/80B4 : 20 7F E9    |              jsr   {$E97F}         ; move mem. to ARG and mult fac*arg. fac =  RND * (4 - N)
   217 |  1    cs.s    172 | Code        | 11 |         |    2 | 00/80B7 : A0 82       |              ldy   #>myfac         
-  218 |  1    cs.s    173 | Code        | 11 |         |    2 | 00/80B9 : A2 8F       |              ldx   #<myfac         
+  218 |  1    cs.s    173 | Code        | 11 |         |    2 | 00/80B9 : A2 91       |              ldx   #<myfac         
   219 |  1    cs.s    174 | Code        | 11 |         |    3 | 00/80BB : 20 2B EB    |              jsr   {$EB2B}         ; move fac => memory (packed) = RND * (4 - N)
   220 |  1    cs.s    175 | Code        | 11 |         |    2 | 00/80BE : A0 30       |              ldy   #48             
   221 |  1    cs.s    176 | Code        | 11 |         |    3 | 00/80C0 : 20 01 E3    |              jsr   {$E301}         ; fac = 48
   222 |  1    cs.s    177 | Code        | 11 |         |    2 | 00/80C3 : A0 82       |              ldy   #>myfac         
-  223 |  1    cs.s    178 | Code        | 11 |         |    2 | 00/80C5 : A9 8F       |              lda   #<myfac         
+  223 |  1    cs.s    178 | Code        | 11 |         |    2 | 00/80C5 : A9 91       |              lda   #<myfac         
   224 |  1    cs.s    179 | Code        | 11 |         |    3 | 00/80C7 : 20 7F E9    |              jsr   {$E97F}         ; move mem. to ARG and mult fac*arg. fac =  RND * (4 - N) * 48
   225 |  1    cs.s    180 | Comment     | 11 |         |    0 | 00/80CA               |     *jsr prnfaq
   226 |  1    cs.s    181 | Empty       | 11 |         |    0 | 00/80CA               |                                    
   227 |  1    cs.s    182 | Code        | 11 |         |    3 | 00/80CA : 20 FB E6    |              jsr   {$E6FB}         ; x = int(fac). NB : fac <= 191
-  228 |  1    cs.s    183 | Code        | 11 |         |    3 | 00/80CD : 8E 89 82    |              stx   hauteur         ; update hauteur
+  228 |  1    cs.s    183 | Code        | 11 |         |    3 | 00/80CD : 8E 8B 82    |              stx   hauteur         ; update hauteur
   229 |  1    cs.s    184 | Empty       | 11 |         |    0 | 00/80D0               |                                    
-  230 |  1    cs.s    185 | Code        | 11 |         |    3 | 00/80D0 : AC 86 82    |              ldy   passe           
+  230 |  1    cs.s    185 | Code        | 11 |         |    3 | 00/80D0 : AC 88 82    |              ldy   passe           
   231 |  1    cs.s    186 | Code        | 11 |         |    3 | 00/80D3 : 20 01 E3    |              jsr   {$E301}         ; fac = passe
   232 |  1    cs.s    187 | Code        | 11 |         |    2 | 00/80D6 : A0 82       |              ldy   #>myfac         
-  233 |  1    cs.s    188 | Code        | 11 |         |    2 | 00/80D8 : A2 8F       |              ldx   #<myfac         
+  233 |  1    cs.s    188 | Code        | 11 |         |    2 | 00/80D8 : A2 91       |              ldx   #<myfac         
   234 |  1    cs.s    189 | Code        | 11 |         |    3 | 00/80DA : 20 2B EB    |              jsr   {$EB2B}         ; move fac => memory (packed) = passe
   235 |  1    cs.s    190 | Code        | 11 |         |    2 | 00/80DD : A0 30       |              ldy   #48             
   236 |  1    cs.s    191 | Code        | 11 |         |    3 | 00/80DF : 20 01 E3    |              jsr   {$E301}         ; fac = 48
   237 |  1    cs.s    192 | Code        | 11 |         |    2 | 00/80E2 : A0 82       |              ldy   #>myfac         
-  238 |  1    cs.s    193 | Code        | 11 |         |    2 | 00/80E4 : A9 8F       |              lda   #<myfac         
+  238 |  1    cs.s    193 | Code        | 11 |         |    2 | 00/80E4 : A9 91       |              lda   #<myfac         
   239 |  1    cs.s    194 | Code        | 11 |         |    3 | 00/80E6 : 20 7F E9    |              jsr   {$E97F}         ; move mem. to ARG and mult fac*arg. fac =  passe * 48
   240 |  1    cs.s    195 | Code        | 11 |         |    3 | 00/80E9 : 20 FB E6    |              jsr   {$E6FB}         ; x = passe * 48
   241 |  1    cs.s    196 | Code        | 11 |         |    1 | 00/80EC : 8A          |              txa                   
   242 |  1    cs.s    197 | Code        | 11 |         |    1 | 00/80ED : 18          |              clc                   
-  243 |  1    cs.s    198 | Code        | 11 |         |    3 | 00/80EE : 6D 89 82    |              adc   hauteur         ; hauteur = INT(RND *(4-passe)* 48)+passe*48
-  244 |  1    cs.s    199 | Code        | 11 |         |    3 | 00/80F1 : 8D 89 82    |              sta   hauteur         
-  245 |  1    cs.s    200 | Code        | 11 |         |    3 | 00/80F4 : 8D 85 82    |              sta   value           
+  243 |  1    cs.s    198 | Code        | 11 |         |    3 | 00/80EE : 6D 8B 82    |              adc   hauteur         ; hauteur = INT(RND *(4-passe)* 48)+passe*48
+  244 |  1    cs.s    199 | Code        | 11 |         |    3 | 00/80F1 : 8D 8B 82    |              sta   hauteur         
+  245 |  1    cs.s    200 | Code        | 11 |         |    3 | 00/80F4 : 8D 87 82    |              sta   value           
   246 |  1    cs.s    201 | Comment     | 11 |         |    0 | 00/80F7               |     ;jsr debug
   247 |  1    cs.s    202 | Comment     | 11 |         |    0 | 00/80F7               | ;wk  jsr rdkey
   248 |  1    cs.s    203 | Empty       | 11 |         |    0 | 00/80F7               |                                    
   249 |  1    cs.s    204 | Comment     | 11 |         |    0 | 00/80F7               | * plot
-  250 |  1    cs.s    205 | Code        | 11 |         |    3 | 00/80F7 : AE 89 82    |              ldx   hauteur         ; save initial values
-  251 |  1    cs.s    206 | Code        | 11 |         |    3 | 00/80FA : 8E 8A 82    |              stx   savhauteur      
+  250 |  1    cs.s    205 | Code        | 11 |         |    3 | 00/80F7 : AE 8B 82    |              ldx   hauteur         ; save initial values
+  251 |  1    cs.s    206 | Code        | 11 |         |    3 | 00/80FA : 8E 8C 82    |              stx   savhauteur      
   252 |  1    cs.s    207 | Empty       | 11 |         |    0 | 00/80FD               |                                    
   253 |  1    cs.s    208 | Empty       | 11 |         |    0 | 00/80FD               | nextligne                          
-  254 |  1    cs.s    209 | Code        | 11 |         |    3 | 00/80FD : AE 89 82    |              ldx   hauteur         ; set ptr to line
-  255 |  1    cs.s    210 | Code        | 11 |         |    3 | 00/8100 : BD BC 83    |              lda   lo,x            
+  254 |  1    cs.s    209 | Code        | 11 |         |    3 | 00/80FD : AE 8B 82    |              ldx   hauteur         ; set ptr to line
+  255 |  1    cs.s    210 | Code        | 11 |         |    3 | 00/8100 : BD BE 83    |              lda   lo,x            
   256 |  1    cs.s    211 | Code        | 11 |         |    2 | 00/8103 : 85 06       |              sta   {$06}           
-  257 |  1    cs.s    212 | Code        | 11 |         |    3 | 00/8105 : BD FC 82    |              lda   hi,x            
+  257 |  1    cs.s    212 | Code        | 11 |         |    3 | 00/8105 : BD FE 82    |              lda   hi,x            
   258 |  1    cs.s    213 | Code        | 11 |         |    2 | 00/8108 : 85 07       |              sta   {$06}+1         
-  259 |  1    cs.s    214 | Code        | 11 |         |    3 | 00/810A : AC 87 82    |              ldy   xstart          ; position horizontale => x reg.
+  259 |  1    cs.s    214 | Code        | 11 |         |    3 | 00/810A : AC 89 82    |              ldy   xstart          ; position horizontale => x reg.
   260 |  1    cs.s    215 | Code        | 11 |         |    2 | 00/810D : A9 80       |              lda   #$80            ; value to plot
   261 |  1    cs.s    216 | Empty       | 11 |         |    0 | 00/810F               |                                    
   262 |  1    cs.s    217 | Code        | 11 |         |    2 | 00/810F : 91 06       |              sta   ({$06}),y       ; plot !
-  263 |  1    cs.s    218 | Code        | 11 |         |    3 | 00/8111 : AD 8C 82    |              lda   speed           
+  263 |  1    cs.s    218 | Code        | 11 |         |    3 | 00/8111 : AD 8E 82    |              lda   speed           
   264 |  1    cs.s    219 | Code        | 11 |         |    3 | 00/8114 : 20 A8 FC    |              jsr   {$FCA8}         
-  265 |  1    cs.s    220 | Code        | 11 |         |    3 | 00/8117 : AD 89 82    |              lda   hauteur         ; next black line to plot
+  265 |  1    cs.s    220 | Code        | 11 |         |    3 | 00/8117 : AD 8B 82    |              lda   hauteur         ; next black line to plot
   266 |  1    cs.s    221 | Code        | 11 |         |    1 | 00/811A : 18          |              clc                   
-  267 |  1    cs.s    222 | Code        | 11 |         |    3 | 00/811B : 6D 8B 82    |              adc   interligne      ; interligne was calculated before
-  268 |  1    cs.s    223 | Code        | 11 |         |    3 | 00/811E : 8D 89 82    |              sta   hauteur         ; upadate heuteur
+  267 |  1    cs.s    222 | Code        | 11 |         |    3 | 00/811B : 6D 8D 82    |              adc   interligne      ; interligne was calculated before
+  268 |  1    cs.s    223 | Code        | 11 |         |    3 | 00/811E : 8D 8B 82    |              sta   hauteur         ; upadate heuteur
   269 |  1    cs.s    224 | Code        | 11 |         |    2 | 00/8121 : C9 BF       |              cmp   #191            ; bottom of screen ?
   270 |  1    cs.s    225 | Code        | 11 |         |    2 | 00/8123 : 90 D8       |              bcc   nextligne       ; no : plot next line
   271 |  1    cs.s    226 | Code        | 11 |         |    2 | 00/8125 : F0 D6       |              beq   nextligne       
   272 |  1    cs.s    227 | Comment     | 11 |         |    0 | 00/8127               |     ;jsr rdkey
   273 |  1    cs.s    228 | Empty       | 11 |         |    0 | 00/8127               |                                    
-  274 |  1    cs.s    229 | Code        | 11 |         |    3 | 00/8127 : AD 8A 82    |              lda   savhauteur      ; get original hauteur (hauteur of building)
-  275 |  1    cs.s    230 | Code        | 11 |         |    3 | 00/812A : 8D 89 82    |              sta   hauteur         ; ==> into var hauteur
-  276 |  1    cs.s    231 | Code        | 11 |         |    3 | 00/812D : EE 87 82    |              inc   xstart          ; next horizontal position
-  277 |  1    cs.s    232 | Code        | 11 |         |    3 | 00/8130 : AC 87 82    |              ldy   xstart          
-  278 |  1    cs.s    233 | Code        | 11 |         |    3 | 00/8133 : CC 88 82    |              cpy   xend            ; = building width ?
+  274 |  1    cs.s    229 | Code        | 11 |         |    3 | 00/8127 : AD 8C 82    |              lda   savhauteur      ; get original hauteur (hauteur of building)
+  275 |  1    cs.s    230 | Code        | 11 |         |    3 | 00/812A : 8D 8B 82    |              sta   hauteur         ; ==> into var hauteur
+  276 |  1    cs.s    231 | Code        | 11 |         |    3 | 00/812D : EE 89 82    |              inc   xstart          ; next horizontal position
+  277 |  1    cs.s    232 | Code        | 11 |         |    3 | 00/8130 : AC 89 82    |              ldy   xstart          
+  278 |  1    cs.s    233 | Code        | 11 |         |    3 | 00/8133 : CC 8A 82    |              cpy   xend            ; = building width ?
   279 |  1    cs.s    234 | Code        | 11 |         |    2 | 00/8136 : 90 C5       |              bcc   nextligne       ; no : plot another stack of lines
   280 |  1    cs.s    235 | Code        | 11 |         |    2 | 00/8138 : F0 C3       |              beq   nextligne       
   281 |  1    cs.s    236 | Empty       | 11 |         |    0 | 00/813A               |                                    
   282 |  1    cs.s    237 | Empty       | 11 |         |    0 | 00/813A               |                                    
-  283 |  1    cs.s    238 | Code        | 11 |         |    3 | 00/813A : AD 88 82    |              lda   xend            ; width of screen reached ?
+  283 |  1    cs.s    238 | Code        | 11 |         |    3 | 00/813A : AD 8A 82    |              lda   xend            ; width of screen reached ?
   284 |  1    cs.s    239 | Code        | 11 |         |    2 | 00/813D : C9 27       |              cmp   #39             
   285 |  1    cs.s    240 | Code        | 11 |         |    2 | 00/813F : F0 0C       |              beq   next            ; yes
-  286 |  1    cs.s    241 | Code        | 11 |         |    3 | 00/8141 : AD 88 82    |              lda   xend            ; no : update xstart for next building
+  286 |  1    cs.s    241 | Code        | 11 |         |    3 | 00/8141 : AD 8A 82    |              lda   xend            ; no : update xstart for next building
   287 |  1    cs.s    242 | Code        | 11 |         |    1 | 00/8144 : 18          |              clc                   
   288 |  1    cs.s    243 | Code        | 11 |         |    2 | 00/8145 : 69 01       |              adc   #1              
-  289 |  1    cs.s    244 | Code        | 11 |         |    3 | 00/8147 : 8D 87 82    |              sta   xstart          ; xstart = xend + 1
+  289 |  1    cs.s    244 | Code        | 11 |         |    3 | 00/8147 : 8D 89 82    |              sta   xstart          ; xstart = xend + 1
   290 |  1    cs.s    245 | Code        | 11 |         |    3 | 00/814A : 4C 6A 80    |              jmp   mloop           
   291 |  1    cs.s    246 | Empty       | 11 |         |    0 | 00/814D               |                                    
   292 |  1    cs.s    247 | Empty       | 11 |         |    0 | 00/814D               | next                               
   293 |  1    cs.s    248 | Comment     | 11 |         |    0 | 00/814D               |     ;jsr rdkey
-  294 |  1    cs.s    249 | Code        | 11 |         |    3 | 00/814D : EE 86 82    |              inc   passe           ; another loop ?
-  295 |  1    cs.s    250 | Code        | 11 |         |    3 | 00/8150 : AD 86 82    |              lda   passe           
+  294 |  1    cs.s    249 | Code        | 11 |         |    3 | 00/814D : EE 88 82    |              inc   passe           ; another loop ?
+  295 |  1    cs.s    250 | Code        | 11 |         |    3 | 00/8150 : AD 88 82    |              lda   passe           
   296 |  1    cs.s    251 | Code        | 11 |         |    2 | 00/8153 : C9 04       |              cmp   #$04            ; 4 loops done ?
   297 |  1    cs.s    252 | Code        | 11 |         |    2 | 00/8155 : F0 03       |              beq   end             ; yes : exit
   298 |  1    cs.s    253 | Code        | 11 |         |    3 | 00/8157 : 4C 65 80    |              jmp   bigloop         ; no : go again
@@ -314,216 +314,220 @@
   311 |  1    cs.s    266 | Comment     | 11 |         |    0 | 00/8169               | *********** UTIL ****************
   312 |  1    cs.s    267 | Empty       | 11 |         |    0 | 00/8169               |                                    
   313 |  1    cs.s    268 | Empty       | 11 |         |    0 | 00/8169               | initrandom                         
-  314 |  1    cs.s    269 | Code        | 11 |         |    2 | 00/8169 : A5 4E       |              lda   $4e             ; init fac with pseudo random
-  315 |  1    cs.s    270 | Code        | 11 |         |    2 | 00/816B : A4 4F       |              ldy   $4f             ; generated by rdkey routine
-  316 |  1    cs.s    271 | Code        | 11 |         |    3 | 00/816D : 20 F2 E2    |              jsr   {$e2f2}         
-  317 |  1    cs.s    272 | Comment     | 11 |         |    0 | 00/8170               |     ;jsr prnfaq
-  318 |  1    cs.s    273 | Empty       | 11 |         |    0 | 00/8170               | dornd                              ; seed random with $4e value
-  319 |  1    cs.s    274 | Code        | 11 |         |    3 | 00/8170 : 20 AE EF    |              jsr   {$EFAE}         
-  320 |  1    cs.s    275 | Code        | 11 |         |    2 | 00/8173 : C6 4E       |              dec   $4e             
-  321 |  1    cs.s    276 | Code        | 11 |         |    2 | 00/8175 : D0 F9       |              bne   dornd           
-  322 |  1    cs.s    277 | Empty       | 11 |         |    0 | 00/8177               |                                    
-  323 |  1    cs.s    278 | Comment     | 11 |         |    0 | 00/8177               |     ;jsr prnfaq
-  324 |  1    cs.s    279 | Code        | 11 |         |    1 | 00/8177 : 60          |              rts                   
-  325 |  1    cs.s    280 | Empty       | 11 |         |    0 | 00/8178               |                                    
-  326 |  1    cs.s    281 | Empty       | 11 |         |    0 | 00/8178               |                                    
-  327 |  1    cs.s    282 | Empty       | 11 |         |    0 | 00/8178               |                                    
-  328 |  1    cs.s    283 | Comment     | 11 |         |    0 | 00/8178               | *** init HGR
-  329 |  1    cs.s    284 | Empty       | 11 |         |    0 | 00/8178               | initHGR                            
-  330 |  1    cs.s    285 | Code        | 11 |         |    3 | 00/8178 : AD 54 C0    |              lda   {$C054}         ; go HGR
-  331 |  1    cs.s    286 | Code        | 11 |         |    3 | 00/817B : AD 52 C0    |              lda   {$C052}         ; no text
-  332 |  1    cs.s    287 | Code        | 11 |         |    3 | 00/817E : AD 50 C0    |              lda   {$C050}         ; graphic mode
-  333 |  1    cs.s    288 | Code        | 11 |         |    3 | 00/8181 : AD 57 C0    |              lda   {$C057}         ; hgr
-  334 |  1    cs.s    289 | Code        | 11 |         |    1 | 00/8184 : 60          |              rts                   
-  335 |  1    cs.s    290 | Comment     | 11 |         |    0 | 00/8185               | ***
-  336 |  1    cs.s    291 | Empty       | 11 |         |    0 | 00/8185               |                                    
-  337 |  1    cs.s    292 | Comment     | 11 |         |    0 | 00/8185               | *** fond bleu
-  338 |  1    cs.s    293 | Empty       | 11 |         |    0 | 00/8185               | fondbleu                           
-  339 |  1    cs.s    294 | Code        | 11 |         |    2 | 00/8185 : A2 00       |              ldx   #$00            
-  340 |  1    cs.s    295 | Empty       | 11 |         |    0 | 00/8187               | newline                            
-  341 |  1    cs.s    296 | Code        | 11 |         |    3 | 00/8187 : BD BC 83    |              lda   lo,x            
-  342 |  1    cs.s    297 | Code        | 11 |         |    2 | 00/818A : 85 06       |              sta   {$06}           
-  343 |  1    cs.s    298 | Code        | 11 |         |    3 | 00/818C : BD FC 82    |              lda   hi,x            
-  344 |  1    cs.s    299 | Code        | 11 |         |    2 | 00/818F : 85 07       |              sta   {$06}+1         
-  345 |  1    cs.s    300 | Empty       | 11 |         |    0 | 00/8191               |                                    
-  346 |  1    cs.s    301 | Code        | 11 |         |    2 | 00/8191 : A0 00       |              ldy   #$00            
-  347 |  1    cs.s    302 | Empty       | 11 |         |    0 | 00/8193               | doline                             
-  348 |  1    cs.s    303 | Code        | 11 |         |    2 | 00/8193 : A9 D5       |              lda   #$d5            
-  349 |  1    cs.s    304 | Code        | 11 |         |    2 | 00/8195 : 91 06       |              sta   ({$06}),y       
-  350 |  1    cs.s    305 | Code        | 11 |         |    1 | 00/8197 : C8          |              iny                   
-  351 |  1    cs.s    306 | Code        | 11 |         |    2 | 00/8198 : A9 AA       |              lda   #$aa            
-  352 |  1    cs.s    307 | Code        | 11 |         |    2 | 00/819A : 91 06       |              sta   ({$06}),y       
-  353 |  1    cs.s    308 | Code        | 11 |         |    1 | 00/819C : C8          |              iny                   
-  354 |  1    cs.s    309 | Code        | 11 |         |    2 | 00/819D : C0 28       |              cpy   #$28            ; 40 bytes ?
-  355 |  1    cs.s    310 | Code        | 11 |         |    2 | 00/819F : D0 F2       |              bne   doline          
-  356 |  1    cs.s    311 | Empty       | 11 |         |    0 | 00/81A1               |                                    
-  357 |  1    cs.s    312 | Code        | 11 |         |    1 | 00/81A1 : E8          |              inx                   
-  358 |  1    cs.s    313 | Code        | 11 |         |    2 | 00/81A2 : E0 C0       |              cpx   #$c0            ; 192 lines ?
-  359 |  1    cs.s    314 | Code        | 11 |         |    2 | 00/81A4 : D0 E1       |              bne   newline         
-  360 |  1    cs.s    315 | Code        | 11 |         |    1 | 00/81A6 : 60          |              rts                   
-  361 |  1    cs.s    316 | Comment     | 11 |         |    0 | 00/81A7               | ***
-  362 |  1    cs.s    317 | Empty       | 11 |         |    0 | 00/81A7               |                                    
-  363 |  1    cs.s    318 | Comment     | 11 |         |    0 | 00/81A7               | *** debug routine
-  364 |  1    cs.s    319 | Empty       | 11 |         |    0 | 00/81A7               | debug                              
-  365 |  1    cs.s    320 | Code        | 11 |         |    3 | 00/81A7 : AD 89 82    |              lda   hauteur         
-  366 |  1    cs.s    321 | Code        | 11 |         |    3 | 00/81AA : 8D 85 82    |              sta   value           
-  367 |  1    cs.s    322 | Code        | 11 |         |    3 | 00/81AD : 20 44 82    |              jsr   prtbyt          
-  368 |  1    cs.s    323 | Code        | 11 |         |    2 | 00/81B0 : A9 A0       |              lda   #" "            
-  369 |  1    cs.s    324 | Code        | 11 |         |    3 | 00/81B2 : 20 ED FD    |              jsr   {$FDED}         
-  370 |  1    cs.s    325 | Code        | 11 |         |    3 | 00/81B5 : AD 87 82    |              lda   xstart          
-  371 |  1    cs.s    326 | Code        | 11 |         |    3 | 00/81B8 : 8D 85 82    |              sta   value           
-  372 |  1    cs.s    327 | Code        | 11 |         |    3 | 00/81BB : 20 44 82    |              jsr   prtbyt          
-  373 |  1    cs.s    328 | Code        | 11 |         |    2 | 00/81BE : A9 A0       |              lda   #" "            
-  374 |  1    cs.s    329 | Code        | 11 |         |    3 | 00/81C0 : 20 ED FD    |              jsr   {$FDED}         
-  375 |  1    cs.s    330 | Code        | 11 |         |    3 | 00/81C3 : AD 88 82    |              lda   xend            
-  376 |  1    cs.s    331 | Code        | 11 |         |    3 | 00/81C6 : 8D 85 82    |              sta   value           
-  377 |  1    cs.s    332 | Code        | 11 |         |    3 | 00/81C9 : 20 44 82    |              jsr   prtbyt          
-  378 |  1    cs.s    333 | Code        | 11 |         |    2 | 00/81CC : A9 8D       |              lda   #$8d            
-  379 |  1    cs.s    334 | Code        | 11 |         |    3 | 00/81CE : 20 ED FD    |              jsr   {$FDED}         
-  380 |  1    cs.s    335 | Code        | 11 |         |    1 | 00/81D1 : 60          |              rts                   
-  381 |  1    cs.s    336 | Comment     | 11 |         |    0 | 00/81D2               | ***
-  382 |  1    cs.s    337 | Empty       | 11 |         |    0 | 00/81D2               |                                    
-  383 |  1    cs.s    338 | Comment     | 11 |         |    0 | 00/81D2               | *** another debug routine
-  384 |  1    cs.s    339 | Empty       | 11 |         |    0 | 00/81D2               | prnstartend                        
-  385 |  1    cs.s    340 | Code        | 11 |         |    2 | 00/81D2 : A9 8D       |              lda   #$8d            
-  386 |  1    cs.s    341 | Code        | 11 |         |    3 | 00/81D4 : 20 ED FD    |              jsr   {$FDED}         
-  387 |  1    cs.s    342 | Code        | 11 |         |    2 | 00/81D7 : A9 A4       |              lda   #"$"            
-  388 |  1    cs.s    343 | Code        | 11 |         |    3 | 00/81D9 : 20 ED FD    |              jsr   {$FDED}         
-  389 |  1    cs.s    344 | Code        | 11 |         |    3 | 00/81DC : AD 87 82    |              lda   xstart          
-  390 |  1    cs.s    345 | Code        | 11 |         |    3 | 00/81DF : 20 DA FD    |              jsr   {$FDDA}         
-  391 |  1    cs.s    346 | Code        | 11 |         |    2 | 00/81E2 : A9 A0       |              lda   #" "            
-  392 |  1    cs.s    347 | Code        | 11 |         |    3 | 00/81E4 : 20 ED FD    |              jsr   {$FDED}         
-  393 |  1    cs.s    348 | Code        | 11 |         |    3 | 00/81E7 : 20 ED FD    |              jsr   {$FDED}         
-  394 |  1    cs.s    349 | Code        | 11 |         |    2 | 00/81EA : A9 A4       |              lda   #"$"            
-  395 |  1    cs.s    350 | Code        | 11 |         |    3 | 00/81EC : 20 ED FD    |              jsr   {$FDED}         
-  396 |  1    cs.s    351 | Code        | 11 |         |    3 | 00/81EF : AD 88 82    |              lda   xend            
-  397 |  1    cs.s    352 | Code        | 11 |         |    3 | 00/81F2 : 20 DA FD    |              jsr   {$FDDA}         
-  398 |  1    cs.s    353 | Code        | 11 |         |    1 | 00/81F5 : 60          |              rts                   
-  399 |  1    cs.s    354 | Comment     | 11 |         |    0 | 00/81F6               | ***
-  400 |  1    cs.s    355 | Empty       | 11 |         |    0 | 00/81F6               |                                    
-  401 |  1    cs.s    356 | Comment     | 11 |         |    0 | 00/81F6               | *** another debug routine
-  402 |  1    cs.s    357 | Empty       | 11 |         |    0 | 00/81F6               | prnfaq                             
-  403 |  1    cs.s    358 | Code        | 11 |         |    3 | 00/81F6 : 20 25 82    |              jsr   savfac          
-  404 |  1    cs.s    359 | Code        | 11 |         |    2 | 00/81F9 : A9 8D       |              lda   #$8d            
-  405 |  1    cs.s    360 | Code        | 11 |         |    3 | 00/81FB : 20 ED FD    |              jsr   {$FDED}         
-  406 |  1    cs.s    361 | Code        | 11 |         |    2 | 00/81FE : A2 00       |              ldx   #$00            
-  407 |  1    cs.s    362 | Empty       | 11 |         |    0 | 00/8200               | print2                             
-  408 |  1    cs.s    363 | Code        | 11 |         |    2 | 00/8200 : B5 9D       |              lda   {$9d},x         
-  409 |  1    cs.s    364 | Code        | 11 |         |    3 | 00/8202 : 20 DA FD    |              jsr   {$FDDA}         
-  410 |  1    cs.s    365 | Code        | 11 |         |    2 | 00/8205 : A9 A0       |              lda   #" "            
-  411 |  1    cs.s    366 | Code        | 11 |         |    3 | 00/8207 : 20 ED FD    |              jsr   {$FDED}         
-  412 |  1    cs.s    367 | Code        | 11 |         |    1 | 00/820A : E8          |              inx                   
-  413 |  1    cs.s    368 | Code        | 11 |         |    2 | 00/820B : E0 06       |              cpx   #$6             
-  414 |  1    cs.s    369 | Code        | 11 |         |    2 | 00/820D : D0 F1       |              bne   print2          
-  415 |  1    cs.s    370 | Code        | 11 |         |    2 | 00/820F : A9 A0       |              lda   #" "            
-  416 |  1    cs.s    371 | Code        | 11 |         |    3 | 00/8211 : 20 ED FD    |              jsr   {$FDED}         
-  417 |  1    cs.s    372 | Code        | 11 |         |    2 | 00/8214 : A0 82       |              ldy   #>fleche        
-  418 |  1    cs.s    373 | Code        | 11 |         |    2 | 00/8216 : A9 96       |              lda   #<fleche        
-  419 |  1    cs.s    374 | Code        | 11 |         |    3 | 00/8218 : 20 3A DB    |              jsr   {$DB3A}         
-  420 |  1    cs.s    375 | Code        | 11 |         |    3 | 00/821B : 20 30 82    |              jsr   getfac          
-  421 |  1    cs.s    376 | Code        | 11 |         |    3 | 00/821E : 20 2E ED    |              jsr   {$ED2E}         ; kills FAC
-  422 |  1    cs.s    377 | Code        | 11 |         |    3 | 00/8221 : 20 30 82    |              jsr   getfac          
-  423 |  1    cs.s    378 | Code        | 11 |         |    1 | 00/8224 : 60          |              rts                   
-  424 |  1    cs.s    379 | Comment     | 11 |         |    0 | 00/8225               | ***
-  425 |  1    cs.s    380 | Empty       | 11 |         |    0 | 00/8225               |                                    
-  426 |  1    cs.s    381 | Comment     | 11 |         |    0 | 00/8225               | *** save FAC content to mem.
-  427 |  1    cs.s    382 | Empty       | 11 |         |    0 | 00/8225               | savfac                             
-  428 |  1    cs.s    383 | Code        | 11 |         |    2 | 00/8225 : A2 05       |              ldx   #$05            
-  429 |  1    cs.s    384 | Empty       | 11 |         |    0 | 00/8227               | lsav                               
-  430 |  1    cs.s    385 | Code        | 11 |         |    2 | 00/8227 : B5 9D       |              lda   {$9d},x         
-  431 |  1    cs.s    386 | Code        | 11 |         |    3 | 00/8229 : 9D 8F 82    |              sta   myfac,x         
-  432 |  1    cs.s    387 | Code        | 11 |         |    1 | 00/822C : CA          |              dex                   
-  433 |  1    cs.s    388 | Code        | 11 |         |    2 | 00/822D : 10 F8       |              bpl   lsav            
-  434 |  1    cs.s    389 | Code        | 11 |         |    1 | 00/822F : 60          |              rts                   
-  435 |  1    cs.s    390 | Comment     | 11 |         |    0 | 00/8230               | ***
-  436 |  1    cs.s    391 | Empty       | 11 |         |    0 | 00/8230               |                                    
-  437 |  1    cs.s    392 | Comment     | 11 |         |    0 | 00/8230               | *** restaore FAC content from mem.
-  438 |  1    cs.s    393 | Empty       | 11 |         |    0 | 00/8230               | getfac                             
-  439 |  1    cs.s    394 | Code        | 11 |         |    2 | 00/8230 : A2 05       |              ldx   #$05            
-  440 |  1    cs.s    395 | Empty       | 11 |         |    0 | 00/8232               | lgf                                
-  441 |  1    cs.s    396 | Code        | 11 |         |    3 | 00/8232 : BD 8F 82    |              lda   myfac,x         
-  442 |  1    cs.s    397 | Code        | 11 |         |    2 | 00/8235 : 95 9D       |              sta   {$9d},x         
-  443 |  1    cs.s    398 | Code        | 11 |         |    1 | 00/8237 : CA          |              dex                   
-  444 |  1    cs.s    399 | Code        | 11 |         |    2 | 00/8238 : 10 F8       |              bpl   lgf             
-  445 |  1    cs.s    400 | Code        | 11 |         |    1 | 00/823A : 60          |              rts                   
-  446 |  1    cs.s    401 | Empty       | 11 |         |    0 | 00/823B               |                                    
-  447 |  1    cs.s    402 | Empty       | 11 |         |    0 | 00/823B               | getsgn                             ; cf. pom's 18
-  448 |  1    cs.s    403 | Code        | 11 |         |    2 | 00/823B : A5 AA       |              lda   $aa             ; signe de fac
-  449 |  1    cs.s    404 | Code        | 11 |         |    2 | 00/823D : 45 A2       |              eor   $a2             ; signe de arg
-  450 |  1    cs.s    405 | Code        | 11 |         |    2 | 00/823F : 85 AB       |              sta   $ab             ; signe resultat dans $ab ???
-  451 |  1    cs.s    406 | Code        | 11 |         |    2 | 00/8241 : A5 9D       |              lda   $9d             ; necessaire pour FMULT
-  452 |  1    cs.s    407 | Code        | 11 |         |    1 | 00/8243 : 60          |              rts                   
-  453 |  1    cs.s    408 | Comment     | 11 |         |    0 | 00/8244               | ***
-  454 |  1    cs.s    409 | Empty       | 11 |         |    0 | 00/8244               |                                    
-  455 |  1    cs.s    410 | Comment     | 11 |         |    0 | 00/8244               | *** print byte in memory (value) in decimal
-  456 |  1    cs.s    411 | Empty       | 11 |         |    0 | 00/8244               | prtbyt                             
-  457 |  1    cs.s    412 | Code        | 11 |         |    1 | 00/8244 : 48          |              pha                   ;save registers
-  458 |  1    cs.s    413 | Code        | 11 |         |    1 | 00/8245 : 8A          |              txa                   
-  459 |  1    cs.s    414 | Code        | 11 |         |    1 | 00/8246 : 48          |              pha                   
-  460 |  1    cs.s    415 | Comment     | 11 |         |    0 | 00/8247               |           ;
-  461 |  1    cs.s    416 | Code        | 11 |         |    2 | 00/8247 : A2 02       |              ldx   #$2             ;max of 3 digits (0-255)
-  462 |  1    cs.s    417 | Code        | 11 |         |    3 | 00/8249 : 8E 83 82    |              stx   lead0           ;init lead0 to non-neg value
-  463 |  1    cs.s    418 | Empty       | 11 |         |    0 | 00/824C               | prtb1                              
-  464 |  1    cs.s    419 | Code        | 11 |         |    2 | 00/824C : A9 B0       |              lda   #"0"            ;initialize digit counter
-  465 |  1    cs.s    420 | Code        | 11 |         |    3 | 00/824E : 8D 84 82    |              sta   digit           
-  466 |  1    cs.s    421 | Comment     | 11 |         |    0 | 00/8251               |           ;
-  467 |  1    cs.s    422 | Code        | 11 |         |    1 | 00/8251 : 38          | prtb2        sec                   
-  468 |  1    cs.s    423 | Code        | 11 |         |    3 | 00/8252 : AD 85 82    |              lda   value           ;get value to be output
-  469 |  1    cs.s    424 | Code        | 11 |         |    3 | 00/8255 : FD 80 82    |              sbc   tbl10,x         ;compare with powers of 10
-  470 |  1    cs.s    425 | Code        | 11 |         |    2 | 00/8258 : 90 09       |              blt   prtb3           ;if less than, output digit
-  471 |  1    cs.s    426 | Comment     | 11 |         |    0 | 00/825A               |           ;
-  472 |  1    cs.s    427 | Code        | 11 |         |    3 | 00/825A : 8D 85 82    |              sta   value           ;decrement value
-  473 |  1    cs.s    428 | Code        | 11 |         |    3 | 00/825D : EE 84 82    |              inc   digit           ;increment digit couoter
-  474 |  1    cs.s    429 | Code        | 11 |         |    3 | 00/8260 : 4C 51 82    |              jmp   prtb2           ;and try again
-  475 |  1    cs.s    430 | Comment     | 11 |         |    0 | 00/8263               |           ;
-  476 |  1    cs.s    431 | Code        | 11 |         |    3 | 00/8263 : AD 84 82    | prtb3        lda   digit           ;get character to output
-  477 |  1    cs.s    432 | Code        | 11 |         |    2 | 00/8266 : E0 00       |              cpx   #$0             ;check to see if the last digit
-  478 |  1    cs.s    433 | Code        | 11 |         |    2 | 00/8268 : F0 0C       |              beq   prtb5           ;is being output
-  479 |  1    cs.s    434 | Code        | 11 |         |    2 | 00/826A : C9 B0       |              cmp   #"0"            ;test for leading zeros
-  480 |  1    cs.s    435 | Code        | 11 |         |    2 | 00/826C : F0 03       |              beq   prtb4           
-  481 |  1    cs.s    436 | Code        | 11 |         |    3 | 00/826E : 8D 83 82    |              sta   lead0           ;force lead0 neg if non-zero
-  482 |  1    cs.s    437 | Comment     | 11 |         |    0 | 00/8271               |           ;
-  483 |  1    cs.s    438 | Empty       | 11 |         |    0 | 00/8271               | prtb4                              
-  484 |  1    cs.s    439 | Code        | 11 |         |    3 | 00/8271 : 2C 83 82    |              bit   lead0           ;if all leading zeros, don't
-  485 |  1    cs.s    440 | Code        | 11 |         |    2 | 00/8274 : 10 03       |              bpl   prtb6           ;output this one
-  486 |  1    cs.s    441 | Empty       | 11 |         |    0 | 00/8276               | prtb5                              
-  487 |  1    cs.s    442 | Code        | 11 |         |    3 | 00/8276 : 20 ED FD    |              jsr   {$FDED}         ;output digit
-  488 |  1    cs.s    443 | Empty       | 11 |         |    0 | 00/8279               | prtb6                              
-  489 |  1    cs.s    444 | Code        | 11 |         |    1 | 00/8279 : CA          |              dex                   ;move to next digit
-  490 |  1    cs.s    445 | Code        | 11 |         |    2 | 00/827A : 10 D0       |              bpl   prtb1           ;quit if three digits have
-  491 |  1    cs.s    446 | Code        | 11 |         |    1 | 00/827C : 68          |              pla                   ;been handled
-  492 |  1    cs.s    447 | Code        | 11 |         |    1 | 00/827D : 8A          |              txa                   
-  493 |  1    cs.s    448 | Code        | 11 |         |    1 | 00/827E : 68          |              pla                   
-  494 |  1    cs.s    449 | Code        | 11 |         |    1 | 00/827F : 60          |              rts                   
-  495 |  1    cs.s    450 | Empty       | 11 |         |    0 | 00/8280               |                                    
-  496 |  1    cs.s    451 | Comment     | 11 |         |    0 | 00/8280               | *** prtbyt data
-  497 |  1    cs.s    452 | Empty       | 11 |         |    0 | 00/8280               | tbl10                              
-  498 |  1    cs.s    453 | Data        | 11 |         |    1 | 00/8280 : 01          |              hex   01              
-  499 |  1    cs.s    454 | Data        | 11 |         |    1 | 00/8281 : 0A          |              hex   0a              
-  500 |  1    cs.s    455 | Data        | 11 |         |    1 | 00/8282 : 64          |              hex   64              
-  501 |  1    cs.s    456 | Empty       | 11 |         |    0 | 00/8283               |                                    
-  502 |  1    cs.s    457 | Data        | 11 |         |    1 | 00/8283 : 00          | lead0        hex   00              
-  503 |  1    cs.s    458 | Data        | 11 |         |    1 | 00/8284 : 00          | digit        hex   00              
-  504 |  1    cs.s    459 | Data        | 11 |         |    1 | 00/8285 : 00          | value        hex   00              
-  505 |  1    cs.s    460 | Empty       | 11 |         |    0 | 00/8286               |                                    
-  506 |  1    cs.s    461 | Empty       | 11 |         |    0 | 00/8286               |                                    
-  507 |  1    cs.s    462 | Comment     | 11 |         |    0 | 00/8286               | ********** data **********
-  508 |  1    cs.s    463 | Data        | 11 |         |    1 | 00/8286 : 00          | passe        hex   00              
-  509 |  1    cs.s    464 | Data        | 11 |         |    1 | 00/8287 : 00          | xstart       hex   00              
-  510 |  1    cs.s    465 | Data        | 11 |         |    1 | 00/8288 : 00          | xend         hex   00              
-  511 |  1    cs.s    466 | Data        | 11 |         |    1 | 00/8289 : 00          | hauteur      hex   00              
-  512 |  1    cs.s    467 | Data        | 11 |         |    1 | 00/828A : 00          | savhauteur   hex   00              
-  513 |  1    cs.s    468 | Data        | 11 |         |    1 | 00/828B : 00          | interligne   hex   00              
-  514 |  1    cs.s    469 | Data        | 11 |         |    1 | 00/828C : 00          | speed        hex   00              
-  515 |  1    cs.s    470 | Empty       | 11 |         |    0 | 00/828D               |                                    
-  516 |  1    cs.s    471 | Data        | 11 |         |    2 | 00/828D : 03 00       | trois        hex   0300            
-  517 |  1    cs.s    472 | Data        | 11 |         |    7 | 00/828F : FF FF FF FF | myfac        hex   ffffffffffffff  
+  314 |  1    cs.s    269 | Comment     | 11 |         |    0 | 00/8169               | * $EFAE (RND) : APPLESOFT FP - FORM A 'RANDOM' NUMBER IN fAC USING ORIGINAl VALUE IN FAC AS
+  315 |  1    cs.s    270 | Comment     | 11 |         |    0 | 00/8169               | * PARAMETER 'KEY' OR 'SEED'. MODifiES MANY fP LOCNS
+  316 |  1    cs.s    271 | Comment     | 11 |         |    0 | 00/8169               | * reference : "whats-where-in-the-apple-a-complete-guide-to-the-apple-computer.pdf" p.207
+  317 |  1    cs.s    272 | Comment     | 11 |         |    0 | 00/8169               | *
+  318 |  1    cs.s    273 | Code        | 11 |         |    2 | 00/8169 : A5 4E       |              lda   $4e             ; init fac with pseudo random
+  319 |  1    cs.s    274 | Code        | 11 |         |    2 | 00/816B : A4 4F       |              ldy   $4f             ; generated by rdkey routine
+  320 |  1    cs.s    275 | Code        | 11 |         |    3 | 00/816D : 20 F2 E2    |              jsr   {$e2f2}         
+  321 |  1    cs.s    276 | Comment     | 11 |         |    0 | 00/8170               |     ;jsr prnfaq
+  322 |  1    cs.s    277 | Empty       | 11 |         |    0 | 00/8170               | dornd                              ; seed random with $4e value
+  323 |  1    cs.s    278 | Code        | 11 |         |    2 | 00/8170 : 46 4E       |              lsr   $4e             
+  324 |  1    cs.s    279 | Code        | 11 |         |    3 | 00/8172 : 20 AE EF    |              jsr   {$EFAE}         
+  325 |  1    cs.s    280 | Code        | 11 |         |    2 | 00/8175 : C6 4E       |              dec   $4e             
+  326 |  1    cs.s    281 | Code        | 11 |         |    2 | 00/8177 : D0 F7       |              bne   dornd           
+  327 |  1    cs.s    282 | Comment     | 11 |         |    0 | 00/8179               |     ;jsr prnfaq
+  328 |  1    cs.s    283 | Code        | 11 |         |    1 | 00/8179 : 60          |              rts                   
+  329 |  1    cs.s    284 | Empty       | 11 |         |    0 | 00/817A               |                                    
+  330 |  1    cs.s    285 | Empty       | 11 |         |    0 | 00/817A               |                                    
+  331 |  1    cs.s    286 | Empty       | 11 |         |    0 | 00/817A               |                                    
+  332 |  1    cs.s    287 | Comment     | 11 |         |    0 | 00/817A               | *** init HGR
+  333 |  1    cs.s    288 | Empty       | 11 |         |    0 | 00/817A               | initHGR                            
+  334 |  1    cs.s    289 | Code        | 11 |         |    3 | 00/817A : AD 54 C0    |              lda   {$C054}         ; go HGR
+  335 |  1    cs.s    290 | Code        | 11 |         |    3 | 00/817D : AD 52 C0    |              lda   {$C052}         ; no text
+  336 |  1    cs.s    291 | Code        | 11 |         |    3 | 00/8180 : AD 50 C0    |              lda   {$C050}         ; graphic mode
+  337 |  1    cs.s    292 | Code        | 11 |         |    3 | 00/8183 : AD 57 C0    |              lda   {$C057}         ; hgr
+  338 |  1    cs.s    293 | Code        | 11 |         |    1 | 00/8186 : 60          |              rts                   
+  339 |  1    cs.s    294 | Comment     | 11 |         |    0 | 00/8187               | ***
+  340 |  1    cs.s    295 | Empty       | 11 |         |    0 | 00/8187               |                                    
+  341 |  1    cs.s    296 | Comment     | 11 |         |    0 | 00/8187               | *** fond bleu
+  342 |  1    cs.s    297 | Empty       | 11 |         |    0 | 00/8187               | fondbleu                           
+  343 |  1    cs.s    298 | Code        | 11 |         |    2 | 00/8187 : A2 00       |              ldx   #$00            
+  344 |  1    cs.s    299 | Empty       | 11 |         |    0 | 00/8189               | newline                            
+  345 |  1    cs.s    300 | Code        | 11 |         |    3 | 00/8189 : BD BE 83    |              lda   lo,x            
+  346 |  1    cs.s    301 | Code        | 11 |         |    2 | 00/818C : 85 06       |              sta   {$06}           
+  347 |  1    cs.s    302 | Code        | 11 |         |    3 | 00/818E : BD FE 82    |              lda   hi,x            
+  348 |  1    cs.s    303 | Code        | 11 |         |    2 | 00/8191 : 85 07       |              sta   {$06}+1         
+  349 |  1    cs.s    304 | Empty       | 11 |         |    0 | 00/8193               |                                    
+  350 |  1    cs.s    305 | Code        | 11 |         |    2 | 00/8193 : A0 00       |              ldy   #$00            
+  351 |  1    cs.s    306 | Empty       | 11 |         |    0 | 00/8195               | doline                             
+  352 |  1    cs.s    307 | Code        | 11 |         |    2 | 00/8195 : A9 D5       |              lda   #$d5            
+  353 |  1    cs.s    308 | Code        | 11 |         |    2 | 00/8197 : 91 06       |              sta   ({$06}),y       
+  354 |  1    cs.s    309 | Code        | 11 |         |    1 | 00/8199 : C8          |              iny                   
+  355 |  1    cs.s    310 | Code        | 11 |         |    2 | 00/819A : A9 AA       |              lda   #$aa            
+  356 |  1    cs.s    311 | Code        | 11 |         |    2 | 00/819C : 91 06       |              sta   ({$06}),y       
+  357 |  1    cs.s    312 | Code        | 11 |         |    1 | 00/819E : C8          |              iny                   
+  358 |  1    cs.s    313 | Code        | 11 |         |    2 | 00/819F : C0 28       |              cpy   #$28            ; 40 bytes ?
+  359 |  1    cs.s    314 | Code        | 11 |         |    2 | 00/81A1 : D0 F2       |              bne   doline          
+  360 |  1    cs.s    315 | Empty       | 11 |         |    0 | 00/81A3               |                                    
+  361 |  1    cs.s    316 | Code        | 11 |         |    1 | 00/81A3 : E8          |              inx                   
+  362 |  1    cs.s    317 | Code        | 11 |         |    2 | 00/81A4 : E0 C0       |              cpx   #$c0            ; 192 lines ?
+  363 |  1    cs.s    318 | Code        | 11 |         |    2 | 00/81A6 : D0 E1       |              bne   newline         
+  364 |  1    cs.s    319 | Code        | 11 |         |    1 | 00/81A8 : 60          |              rts                   
+  365 |  1    cs.s    320 | Comment     | 11 |         |    0 | 00/81A9               | ***
+  366 |  1    cs.s    321 | Empty       | 11 |         |    0 | 00/81A9               |                                    
+  367 |  1    cs.s    322 | Comment     | 11 |         |    0 | 00/81A9               | *** debug routine
+  368 |  1    cs.s    323 | Empty       | 11 |         |    0 | 00/81A9               | debug                              
+  369 |  1    cs.s    324 | Code        | 11 |         |    3 | 00/81A9 : AD 8B 82    |              lda   hauteur         
+  370 |  1    cs.s    325 | Code        | 11 |         |    3 | 00/81AC : 8D 87 82    |              sta   value           
+  371 |  1    cs.s    326 | Code        | 11 |         |    3 | 00/81AF : 20 46 82    |              jsr   prtbyt          
+  372 |  1    cs.s    327 | Code        | 11 |         |    2 | 00/81B2 : A9 A0       |              lda   #" "            
+  373 |  1    cs.s    328 | Code        | 11 |         |    3 | 00/81B4 : 20 ED FD    |              jsr   {$FDED}         
+  374 |  1    cs.s    329 | Code        | 11 |         |    3 | 00/81B7 : AD 89 82    |              lda   xstart          
+  375 |  1    cs.s    330 | Code        | 11 |         |    3 | 00/81BA : 8D 87 82    |              sta   value           
+  376 |  1    cs.s    331 | Code        | 11 |         |    3 | 00/81BD : 20 46 82    |              jsr   prtbyt          
+  377 |  1    cs.s    332 | Code        | 11 |         |    2 | 00/81C0 : A9 A0       |              lda   #" "            
+  378 |  1    cs.s    333 | Code        | 11 |         |    3 | 00/81C2 : 20 ED FD    |              jsr   {$FDED}         
+  379 |  1    cs.s    334 | Code        | 11 |         |    3 | 00/81C5 : AD 8A 82    |              lda   xend            
+  380 |  1    cs.s    335 | Code        | 11 |         |    3 | 00/81C8 : 8D 87 82    |              sta   value           
+  381 |  1    cs.s    336 | Code        | 11 |         |    3 | 00/81CB : 20 46 82    |              jsr   prtbyt          
+  382 |  1    cs.s    337 | Code        | 11 |         |    2 | 00/81CE : A9 8D       |              lda   #$8d            
+  383 |  1    cs.s    338 | Code        | 11 |         |    3 | 00/81D0 : 20 ED FD    |              jsr   {$FDED}         
+  384 |  1    cs.s    339 | Code        | 11 |         |    1 | 00/81D3 : 60          |              rts                   
+  385 |  1    cs.s    340 | Comment     | 11 |         |    0 | 00/81D4               | ***
+  386 |  1    cs.s    341 | Empty       | 11 |         |    0 | 00/81D4               |                                    
+  387 |  1    cs.s    342 | Comment     | 11 |         |    0 | 00/81D4               | *** another debug routine
+  388 |  1    cs.s    343 | Empty       | 11 |         |    0 | 00/81D4               | prnstartend                        
+  389 |  1    cs.s    344 | Code        | 11 |         |    2 | 00/81D4 : A9 8D       |              lda   #$8d            
+  390 |  1    cs.s    345 | Code        | 11 |         |    3 | 00/81D6 : 20 ED FD    |              jsr   {$FDED}         
+  391 |  1    cs.s    346 | Code        | 11 |         |    2 | 00/81D9 : A9 A4       |              lda   #"$"            
+  392 |  1    cs.s    347 | Code        | 11 |         |    3 | 00/81DB : 20 ED FD    |              jsr   {$FDED}         
+  393 |  1    cs.s    348 | Code        | 11 |         |    3 | 00/81DE : AD 89 82    |              lda   xstart          
+  394 |  1    cs.s    349 | Code        | 11 |         |    3 | 00/81E1 : 20 DA FD    |              jsr   {$FDDA}         
+  395 |  1    cs.s    350 | Code        | 11 |         |    2 | 00/81E4 : A9 A0       |              lda   #" "            
+  396 |  1    cs.s    351 | Code        | 11 |         |    3 | 00/81E6 : 20 ED FD    |              jsr   {$FDED}         
+  397 |  1    cs.s    352 | Code        | 11 |         |    3 | 00/81E9 : 20 ED FD    |              jsr   {$FDED}         
+  398 |  1    cs.s    353 | Code        | 11 |         |    2 | 00/81EC : A9 A4       |              lda   #"$"            
+  399 |  1    cs.s    354 | Code        | 11 |         |    3 | 00/81EE : 20 ED FD    |              jsr   {$FDED}         
+  400 |  1    cs.s    355 | Code        | 11 |         |    3 | 00/81F1 : AD 8A 82    |              lda   xend            
+  401 |  1    cs.s    356 | Code        | 11 |         |    3 | 00/81F4 : 20 DA FD    |              jsr   {$FDDA}         
+  402 |  1    cs.s    357 | Code        | 11 |         |    1 | 00/81F7 : 60          |              rts                   
+  403 |  1    cs.s    358 | Comment     | 11 |         |    0 | 00/81F8               | ***
+  404 |  1    cs.s    359 | Empty       | 11 |         |    0 | 00/81F8               |                                    
+  405 |  1    cs.s    360 | Comment     | 11 |         |    0 | 00/81F8               | *** another debug routine
+  406 |  1    cs.s    361 | Empty       | 11 |         |    0 | 00/81F8               | prnfaq                             
+  407 |  1    cs.s    362 | Code        | 11 |         |    3 | 00/81F8 : 20 27 82    |              jsr   savfac          
+  408 |  1    cs.s    363 | Code        | 11 |         |    2 | 00/81FB : A9 8D       |              lda   #$8d            
+  409 |  1    cs.s    364 | Code        | 11 |         |    3 | 00/81FD : 20 ED FD    |              jsr   {$FDED}         
+  410 |  1    cs.s    365 | Code        | 11 |         |    2 | 00/8200 : A2 00       |              ldx   #$00            
+  411 |  1    cs.s    366 | Empty       | 11 |         |    0 | 00/8202               | print2                             
+  412 |  1    cs.s    367 | Code        | 11 |         |    2 | 00/8202 : B5 9D       |              lda   {$9d},x         
+  413 |  1    cs.s    368 | Code        | 11 |         |    3 | 00/8204 : 20 DA FD    |              jsr   {$FDDA}         
+  414 |  1    cs.s    369 | Code        | 11 |         |    2 | 00/8207 : A9 A0       |              lda   #" "            
+  415 |  1    cs.s    370 | Code        | 11 |         |    3 | 00/8209 : 20 ED FD    |              jsr   {$FDED}         
+  416 |  1    cs.s    371 | Code        | 11 |         |    1 | 00/820C : E8          |              inx                   
+  417 |  1    cs.s    372 | Code        | 11 |         |    2 | 00/820D : E0 06       |              cpx   #$6             
+  418 |  1    cs.s    373 | Code        | 11 |         |    2 | 00/820F : D0 F1       |              bne   print2          
+  419 |  1    cs.s    374 | Code        | 11 |         |    2 | 00/8211 : A9 A0       |              lda   #" "            
+  420 |  1    cs.s    375 | Code        | 11 |         |    3 | 00/8213 : 20 ED FD    |              jsr   {$FDED}         
+  421 |  1    cs.s    376 | Code        | 11 |         |    2 | 00/8216 : A0 82       |              ldy   #>fleche        
+  422 |  1    cs.s    377 | Code        | 11 |         |    2 | 00/8218 : A9 98       |              lda   #<fleche        
+  423 |  1    cs.s    378 | Code        | 11 |         |    3 | 00/821A : 20 3A DB    |              jsr   {$DB3A}         
+  424 |  1    cs.s    379 | Code        | 11 |         |    3 | 00/821D : 20 32 82    |              jsr   getfac          
+  425 |  1    cs.s    380 | Code        | 11 |         |    3 | 00/8220 : 20 2E ED    |              jsr   {$ED2E}         ; kills FAC
+  426 |  1    cs.s    381 | Code        | 11 |         |    3 | 00/8223 : 20 32 82    |              jsr   getfac          
+  427 |  1    cs.s    382 | Code        | 11 |         |    1 | 00/8226 : 60          |              rts                   
+  428 |  1    cs.s    383 | Comment     | 11 |         |    0 | 00/8227               | ***
+  429 |  1    cs.s    384 | Empty       | 11 |         |    0 | 00/8227               |                                    
+  430 |  1    cs.s    385 | Comment     | 11 |         |    0 | 00/8227               | *** save FAC content to mem.
+  431 |  1    cs.s    386 | Empty       | 11 |         |    0 | 00/8227               | savfac                             
+  432 |  1    cs.s    387 | Code        | 11 |         |    2 | 00/8227 : A2 05       |              ldx   #$05            
+  433 |  1    cs.s    388 | Empty       | 11 |         |    0 | 00/8229               | lsav                               
+  434 |  1    cs.s    389 | Code        | 11 |         |    2 | 00/8229 : B5 9D       |              lda   {$9d},x         
+  435 |  1    cs.s    390 | Code        | 11 |         |    3 | 00/822B : 9D 91 82    |              sta   myfac,x         
+  436 |  1    cs.s    391 | Code        | 11 |         |    1 | 00/822E : CA          |              dex                   
+  437 |  1    cs.s    392 | Code        | 11 |         |    2 | 00/822F : 10 F8       |              bpl   lsav            
+  438 |  1    cs.s    393 | Code        | 11 |         |    1 | 00/8231 : 60          |              rts                   
+  439 |  1    cs.s    394 | Comment     | 11 |         |    0 | 00/8232               | ***
+  440 |  1    cs.s    395 | Empty       | 11 |         |    0 | 00/8232               |                                    
+  441 |  1    cs.s    396 | Comment     | 11 |         |    0 | 00/8232               | *** restaore FAC content from mem.
+  442 |  1    cs.s    397 | Empty       | 11 |         |    0 | 00/8232               | getfac                             
+  443 |  1    cs.s    398 | Code        | 11 |         |    2 | 00/8232 : A2 05       |              ldx   #$05            
+  444 |  1    cs.s    399 | Empty       | 11 |         |    0 | 00/8234               | lgf                                
+  445 |  1    cs.s    400 | Code        | 11 |         |    3 | 00/8234 : BD 91 82    |              lda   myfac,x         
+  446 |  1    cs.s    401 | Code        | 11 |         |    2 | 00/8237 : 95 9D       |              sta   {$9d},x         
+  447 |  1    cs.s    402 | Code        | 11 |         |    1 | 00/8239 : CA          |              dex                   
+  448 |  1    cs.s    403 | Code        | 11 |         |    2 | 00/823A : 10 F8       |              bpl   lgf             
+  449 |  1    cs.s    404 | Code        | 11 |         |    1 | 00/823C : 60          |              rts                   
+  450 |  1    cs.s    405 | Empty       | 11 |         |    0 | 00/823D               |                                    
+  451 |  1    cs.s    406 | Empty       | 11 |         |    0 | 00/823D               | getsgn                             ; cf. pom's 18
+  452 |  1    cs.s    407 | Code        | 11 |         |    2 | 00/823D : A5 AA       |              lda   $aa             ; signe de fac
+  453 |  1    cs.s    408 | Code        | 11 |         |    2 | 00/823F : 45 A2       |              eor   $a2             ; signe de arg
+  454 |  1    cs.s    409 | Code        | 11 |         |    2 | 00/8241 : 85 AB       |              sta   $ab             ; signe resultat dans $ab ???
+  455 |  1    cs.s    410 | Code        | 11 |         |    2 | 00/8243 : A5 9D       |              lda   $9d             ; necessaire pour FMULT
+  456 |  1    cs.s    411 | Code        | 11 |         |    1 | 00/8245 : 60          |              rts                   
+  457 |  1    cs.s    412 | Comment     | 11 |         |    0 | 00/8246               | ***
+  458 |  1    cs.s    413 | Empty       | 11 |         |    0 | 00/8246               |                                    
+  459 |  1    cs.s    414 | Comment     | 11 |         |    0 | 00/8246               | *** print byte in memory (value) in decimal
+  460 |  1    cs.s    415 | Empty       | 11 |         |    0 | 00/8246               | prtbyt                             
+  461 |  1    cs.s    416 | Code        | 11 |         |    1 | 00/8246 : 48          |              pha                   ;save registers
+  462 |  1    cs.s    417 | Code        | 11 |         |    1 | 00/8247 : 8A          |              txa                   
+  463 |  1    cs.s    418 | Code        | 11 |         |    1 | 00/8248 : 48          |              pha                   
+  464 |  1    cs.s    419 | Comment     | 11 |         |    0 | 00/8249               |           ;
+  465 |  1    cs.s    420 | Code        | 11 |         |    2 | 00/8249 : A2 02       |              ldx   #$2             ;max of 3 digits (0-255)
+  466 |  1    cs.s    421 | Code        | 11 |         |    3 | 00/824B : 8E 85 82    |              stx   lead0           ;init lead0 to non-neg value
+  467 |  1    cs.s    422 | Empty       | 11 |         |    0 | 00/824E               | prtb1                              
+  468 |  1    cs.s    423 | Code        | 11 |         |    2 | 00/824E : A9 B0       |              lda   #"0"            ;initialize digit counter
+  469 |  1    cs.s    424 | Code        | 11 |         |    3 | 00/8250 : 8D 86 82    |              sta   digit           
+  470 |  1    cs.s    425 | Comment     | 11 |         |    0 | 00/8253               |           ;
+  471 |  1    cs.s    426 | Code        | 11 |         |    1 | 00/8253 : 38          | prtb2        sec                   
+  472 |  1    cs.s    427 | Code        | 11 |         |    3 | 00/8254 : AD 87 82    |              lda   value           ;get value to be output
+  473 |  1    cs.s    428 | Code        | 11 |         |    3 | 00/8257 : FD 82 82    |              sbc   tbl10,x         ;compare with powers of 10
+  474 |  1    cs.s    429 | Code        | 11 |         |    2 | 00/825A : 90 09       |              blt   prtb3           ;if less than, output digit
+  475 |  1    cs.s    430 | Comment     | 11 |         |    0 | 00/825C               |           ;
+  476 |  1    cs.s    431 | Code        | 11 |         |    3 | 00/825C : 8D 87 82    |              sta   value           ;decrement value
+  477 |  1    cs.s    432 | Code        | 11 |         |    3 | 00/825F : EE 86 82    |              inc   digit           ;increment digit couoter
+  478 |  1    cs.s    433 | Code        | 11 |         |    3 | 00/8262 : 4C 53 82    |              jmp   prtb2           ;and try again
+  479 |  1    cs.s    434 | Comment     | 11 |         |    0 | 00/8265               |           ;
+  480 |  1    cs.s    435 | Code        | 11 |         |    3 | 00/8265 : AD 86 82    | prtb3        lda   digit           ;get character to output
+  481 |  1    cs.s    436 | Code        | 11 |         |    2 | 00/8268 : E0 00       |              cpx   #$0             ;check to see if the last digit
+  482 |  1    cs.s    437 | Code        | 11 |         |    2 | 00/826A : F0 0C       |              beq   prtb5           ;is being output
+  483 |  1    cs.s    438 | Code        | 11 |         |    2 | 00/826C : C9 B0       |              cmp   #"0"            ;test for leading zeros
+  484 |  1    cs.s    439 | Code        | 11 |         |    2 | 00/826E : F0 03       |              beq   prtb4           
+  485 |  1    cs.s    440 | Code        | 11 |         |    3 | 00/8270 : 8D 85 82    |              sta   lead0           ;force lead0 neg if non-zero
+  486 |  1    cs.s    441 | Comment     | 11 |         |    0 | 00/8273               |           ;
+  487 |  1    cs.s    442 | Empty       | 11 |         |    0 | 00/8273               | prtb4                              
+  488 |  1    cs.s    443 | Code        | 11 |         |    3 | 00/8273 : 2C 85 82    |              bit   lead0           ;if all leading zeros, don't
+  489 |  1    cs.s    444 | Code        | 11 |         |    2 | 00/8276 : 10 03       |              bpl   prtb6           ;output this one
+  490 |  1    cs.s    445 | Empty       | 11 |         |    0 | 00/8278               | prtb5                              
+  491 |  1    cs.s    446 | Code        | 11 |         |    3 | 00/8278 : 20 ED FD    |              jsr   {$FDED}         ;output digit
+  492 |  1    cs.s    447 | Empty       | 11 |         |    0 | 00/827B               | prtb6                              
+  493 |  1    cs.s    448 | Code        | 11 |         |    1 | 00/827B : CA          |              dex                   ;move to next digit
+  494 |  1    cs.s    449 | Code        | 11 |         |    2 | 00/827C : 10 D0       |              bpl   prtb1           ;quit if three digits have
+  495 |  1    cs.s    450 | Code        | 11 |         |    1 | 00/827E : 68          |              pla                   ;been handled
+  496 |  1    cs.s    451 | Code        | 11 |         |    1 | 00/827F : 8A          |              txa                   
+  497 |  1    cs.s    452 | Code        | 11 |         |    1 | 00/8280 : 68          |              pla                   
+  498 |  1    cs.s    453 | Code        | 11 |         |    1 | 00/8281 : 60          |              rts                   
+  499 |  1    cs.s    454 | Empty       | 11 |         |    0 | 00/8282               |                                    
+  500 |  1    cs.s    455 | Comment     | 11 |         |    0 | 00/8282               | *** prtbyt data
+  501 |  1    cs.s    456 | Empty       | 11 |         |    0 | 00/8282               | tbl10                              
+  502 |  1    cs.s    457 | Data        | 11 |         |    1 | 00/8282 : 01          |              hex   01              
+  503 |  1    cs.s    458 | Data        | 11 |         |    1 | 00/8283 : 0A          |              hex   0a              
+  504 |  1    cs.s    459 | Data        | 11 |         |    1 | 00/8284 : 64          |              hex   64              
+  505 |  1    cs.s    460 | Empty       | 11 |         |    0 | 00/8285               |                                    
+  506 |  1    cs.s    461 | Data        | 11 |         |    1 | 00/8285 : 00          | lead0        hex   00              
+  507 |  1    cs.s    462 | Data        | 11 |         |    1 | 00/8286 : 00          | digit        hex   00              
+  508 |  1    cs.s    463 | Data        | 11 |         |    1 | 00/8287 : 00          | value        hex   00              
+  509 |  1    cs.s    464 | Empty       | 11 |         |    0 | 00/8288               |                                    
+  510 |  1    cs.s    465 | Empty       | 11 |         |    0 | 00/8288               |                                    
+  511 |  1    cs.s    466 | Comment     | 11 |         |    0 | 00/8288               | ********** data **********
+  512 |  1    cs.s    467 | Data        | 11 |         |    1 | 00/8288 : 00          | passe        hex   00              
+  513 |  1    cs.s    468 | Data        | 11 |         |    1 | 00/8289 : 00          | xstart       hex   00              
+  514 |  1    cs.s    469 | Data        | 11 |         |    1 | 00/828A : 00          | xend         hex   00              
+  515 |  1    cs.s    470 | Data        | 11 |         |    1 | 00/828B : 00          | hauteur      hex   00              
+  516 |  1    cs.s    471 | Data        | 11 |         |    1 | 00/828C : 00          | savhauteur   hex   00              
+  517 |  1    cs.s    472 | Data        | 11 |         |    1 | 00/828D : 00          | interligne   hex   00              
+  518 |  1    cs.s    473 | Data        | 11 |         |    1 | 00/828E : 00          | speed        hex   00              
+  519 |  1    cs.s    474 | Empty       | 11 |         |    0 | 00/828F               |                                    
+  520 |  1    cs.s    475 | Data        | 11 |         |    2 | 00/828F : 03 00       | trois        hex   0300            
+  521 |  1    cs.s    476 | Data        | 11 |         |    7 | 00/8291 : FF FF FF FF | myfac        hex   ffffffffffffff  
       |                   |             |    |         |      |           FF FF FF    |
-  518 |  1    cs.s    473 | Data        | 11 |         |    5 | 00/8296 : BD BD BD BE | fleche       asc   "===> "         
+  522 |  1    cs.s    477 | Data        | 11 |         |    5 | 00/8298 : BD BD BD BE | fleche       asc   "===> "         
       |                   |             |    |         |      |           A0          |
-  519 |  1    cs.s    474 | Data        | 11 |         |    1 | 00/829B : 00          |              hex   00              
-  520 |  1    cs.s    475 | Empty       | 11 |         |    0 | 00/829C               |                                    
-  521 |  1    cs.s    476 | Data        | 11 |         |   32 | 00/829C : A0 A0 A0 A0 | welcome      asc   "          Welcome to CityScape !"
+  523 |  1    cs.s    478 | Data        | 11 |         |    1 | 00/829D : 00          |              hex   00              
+  524 |  1    cs.s    479 | Empty       | 11 |         |    0 | 00/829E               |                                    
+  525 |  1    cs.s    480 | Data        | 11 |         |   32 | 00/829E : A0 A0 A0 A0 | welcome      asc   "          Welcome to CityScape !"
       |                   |             |    |         |      |           A0 A0 A0 A0 |
       |                   |             |    |         |      |           A0 A0 D7 E5 |
       |                   |             |    |         |      |           EC E3 EF ED |
@@ -531,9 +535,9 @@
       |                   |             |    |         |      |           A0 C3 E9 F4 |
       |                   |             |    |         |      |           F9 D3 E3 E1 |
       |                   |             |    |         |      |           F0 E5 A0 A1 |
-  522 |  1    cs.s    477 | Data        | 11 |         |    4 | 00/82BC : 8D 8D 8D 00 |              hex   8d8d8d00        
-  523 |  1    cs.s    478 | Empty       | 11 |         |    0 | 00/82C0               |                                    
-  524 |  1    cs.s    479 | Data        | 11 |         |   38 | 00/82C0 : A0 A0 A0 C3 | choix        asc   "   Choose : <S>low    <F>ast   <E>xit "
+  526 |  1    cs.s    481 | Data        | 11 |         |    4 | 00/82BE : 8D 8D 8D 00 |              hex   8d8d8d00        
+  527 |  1    cs.s    482 | Empty       | 11 |         |    0 | 00/82C2               |                                    
+  528 |  1    cs.s    483 | Data        | 11 |         |   38 | 00/82C2 : A0 A0 A0 C3 | choix        asc   "   Choose : <S>low    <F>ast   <E>xit "
       |                   |             |    |         |      |           E8 EF EF F3 |
       |                   |             |    |         |      |           E5 A0 BA A0 |
       |                   |             |    |         |      |           BC D3 BE EC |
@@ -543,171 +547,171 @@
       |                   |             |    |         |      |           A0 A0 A0 BC |
       |                   |             |    |         |      |           C5 BE F8 E9 |
       |                   |             |    |         |      |           F4 A0       |
-  525 |  1    cs.s    480 | Data        | 11 |         |    2 | 00/82E6 : 8D 8D       |              hex   8d8d            
-  526 |  1    cs.s    481 | Data        | 11 |         |   19 | 00/82E8 : A0 A0 A0 A0 |              asc   "                   "
+  529 |  1    cs.s    484 | Data        | 11 |         |    2 | 00/82E8 : 8D 8D       |              hex   8d8d            
+  530 |  1    cs.s    485 | Data        | 11 |         |   19 | 00/82EA : A0 A0 A0 A0 |              asc   "                   "
       |                   |             |    |         |      |           A0 A0 A0 A0 |
       |                   |             |    |         |      |           A0 A0 A0 A0 |
       |                   |             |    |         |      |           A0 A0 A0 A0 |
       |                   |             |    |         |      |           A0 A0 A0    |
-  527 |  1    cs.s    482 | Data        | 11 |         |    1 | 00/82FB : 00          |              hex   00              
-  528 |  1    cs.s    483 | Empty       | 11 |         |    0 | 00/82FC               |                                    
-  529 |  1    cs.s    484 | Empty       | 11 |         |    0 | 00/82FC               |                                    
-  530 |  1    cs.s    485 | Comment     | 11 |         |    0 | 00/82FC               | *
-  531 |  1    cs.s    486 | Data        | 11 |         |    8 | 00/82FC : 20 24 28 2C | hi           hex   2024282C3034383C; high byte of HGR memory address
+  531 |  1    cs.s    486 | Data        | 11 |         |    1 | 00/82FD : 00          |              hex   00              
+  532 |  1    cs.s    487 | Empty       | 11 |         |    0 | 00/82FE               |                                    
+  533 |  1    cs.s    488 | Empty       | 11 |         |    0 | 00/82FE               |                                    
+  534 |  1    cs.s    489 | Comment     | 11 |         |    0 | 00/82FE               | *
+  535 |  1    cs.s    490 | Data        | 11 |         |    8 | 00/82FE : 20 24 28 2C | hi           hex   2024282C3034383C; high byte of HGR memory address
       |                   |             |    |         |      |           30 34 38 3C |
-  532 |  1    cs.s    487 | Data        | 11 |         |    8 | 00/8304 : 20 24 28 2C |              hex   2024282C3034383C
+  536 |  1    cs.s    491 | Data        | 11 |         |    8 | 00/8306 : 20 24 28 2C |              hex   2024282C3034383C
       |                   |             |    |         |      |           30 34 38 3C |
-  533 |  1    cs.s    488 | Data        | 11 |         |    8 | 00/830C : 21 25 29 2D |              hex   2125292D3135393D
+  537 |  1    cs.s    492 | Data        | 11 |         |    8 | 00/830E : 21 25 29 2D |              hex   2125292D3135393D
       |                   |             |    |         |      |           31 35 39 3D |
-  534 |  1    cs.s    489 | Data        | 11 |         |    8 | 00/8314 : 21 25 29 2D |              hex   2125292D3135393D
+  538 |  1    cs.s    493 | Data        | 11 |         |    8 | 00/8316 : 21 25 29 2D |              hex   2125292D3135393D
       |                   |             |    |         |      |           31 35 39 3D |
-  535 |  1    cs.s    490 | Data        | 11 |         |    8 | 00/831C : 22 26 2A 2E |              hex   22262A2E32363A3E
+  539 |  1    cs.s    494 | Data        | 11 |         |    8 | 00/831E : 22 26 2A 2E |              hex   22262A2E32363A3E
       |                   |             |    |         |      |           32 36 3A 3E |
-  536 |  1    cs.s    491 | Data        | 11 |         |    8 | 00/8324 : 22 26 2A 2E |              hex   22262A2E32363A3E
+  540 |  1    cs.s    495 | Data        | 11 |         |    8 | 00/8326 : 22 26 2A 2E |              hex   22262A2E32363A3E
       |                   |             |    |         |      |           32 36 3A 3E |
-  537 |  1    cs.s    492 | Data        | 11 |         |    8 | 00/832C : 23 27 2B 2F |              hex   23272B2F33373B3F
+  541 |  1    cs.s    496 | Data        | 11 |         |    8 | 00/832E : 23 27 2B 2F |              hex   23272B2F33373B3F
       |                   |             |    |         |      |           33 37 3B 3F |
-  538 |  1    cs.s    493 | Data        | 11 |         |    8 | 00/8334 : 23 27 2B 2F |              hex   23272B2F33373B3F
+  542 |  1    cs.s    497 | Data        | 11 |         |    8 | 00/8336 : 23 27 2B 2F |              hex   23272B2F33373B3F
       |                   |             |    |         |      |           33 37 3B 3F |
-  539 |  1    cs.s    494 | Data        | 11 |         |    8 | 00/833C : 20 24 28 2C |              hex   2024282C3034383C
+  543 |  1    cs.s    498 | Data        | 11 |         |    8 | 00/833E : 20 24 28 2C |              hex   2024282C3034383C
       |                   |             |    |         |      |           30 34 38 3C |
-  540 |  1    cs.s    495 | Data        | 11 |         |    8 | 00/8344 : 20 24 28 2C |              hex   2024282C3034383C
+  544 |  1    cs.s    499 | Data        | 11 |         |    8 | 00/8346 : 20 24 28 2C |              hex   2024282C3034383C
       |                   |             |    |         |      |           30 34 38 3C |
-  541 |  1    cs.s    496 | Data        | 11 |         |    8 | 00/834C : 21 25 29 2D |              hex   2125292D3135393D
+  545 |  1    cs.s    500 | Data        | 11 |         |    8 | 00/834E : 21 25 29 2D |              hex   2125292D3135393D
       |                   |             |    |         |      |           31 35 39 3D |
-  542 |  1    cs.s    497 | Data        | 11 |         |    8 | 00/8354 : 21 25 29 2D |              hex   2125292D3135393D
+  546 |  1    cs.s    501 | Data        | 11 |         |    8 | 00/8356 : 21 25 29 2D |              hex   2125292D3135393D
       |                   |             |    |         |      |           31 35 39 3D |
-  543 |  1    cs.s    498 | Data        | 11 |         |    8 | 00/835C : 22 26 2A 2E |              hex   22262A2E32363A3E
+  547 |  1    cs.s    502 | Data        | 11 |         |    8 | 00/835E : 22 26 2A 2E |              hex   22262A2E32363A3E
       |                   |             |    |         |      |           32 36 3A 3E |
-  544 |  1    cs.s    499 | Data        | 11 |         |    8 | 00/8364 : 22 26 2A 2E |              hex   22262A2E32363A3E
+  548 |  1    cs.s    503 | Data        | 11 |         |    8 | 00/8366 : 22 26 2A 2E |              hex   22262A2E32363A3E
       |                   |             |    |         |      |           32 36 3A 3E |
-  545 |  1    cs.s    500 | Data        | 11 |         |    8 | 00/836C : 23 27 2B 2F |              hex   23272B2F33373B3F
+  549 |  1    cs.s    504 | Data        | 11 |         |    8 | 00/836E : 23 27 2B 2F |              hex   23272B2F33373B3F
       |                   |             |    |         |      |           33 37 3B 3F |
-  546 |  1    cs.s    501 | Data        | 11 |         |    8 | 00/8374 : 23 27 2B 2F |              hex   23272B2F33373B3F
+  550 |  1    cs.s    505 | Data        | 11 |         |    8 | 00/8376 : 23 27 2B 2F |              hex   23272B2F33373B3F
       |                   |             |    |         |      |           33 37 3B 3F |
-  547 |  1    cs.s    502 | Data        | 11 |         |    8 | 00/837C : 20 24 28 2C |              hex   2024282C3034383C
+  551 |  1    cs.s    506 | Data        | 11 |         |    8 | 00/837E : 20 24 28 2C |              hex   2024282C3034383C
       |                   |             |    |         |      |           30 34 38 3C |
-  548 |  1    cs.s    503 | Data        | 11 |         |    8 | 00/8384 : 20 24 28 2C |              hex   2024282C3034383C
+  552 |  1    cs.s    507 | Data        | 11 |         |    8 | 00/8386 : 20 24 28 2C |              hex   2024282C3034383C
       |                   |             |    |         |      |           30 34 38 3C |
-  549 |  1    cs.s    504 | Data        | 11 |         |    8 | 00/838C : 21 25 29 2D |              hex   2125292D3135393D
+  553 |  1    cs.s    508 | Data        | 11 |         |    8 | 00/838E : 21 25 29 2D |              hex   2125292D3135393D
       |                   |             |    |         |      |           31 35 39 3D |
-  550 |  1    cs.s    505 | Data        | 11 |         |    8 | 00/8394 : 21 25 29 2D |              hex   2125292D3135393D
+  554 |  1    cs.s    509 | Data        | 11 |         |    8 | 00/8396 : 21 25 29 2D |              hex   2125292D3135393D
       |                   |             |    |         |      |           31 35 39 3D |
-  551 |  1    cs.s    506 | Data        | 11 |         |    8 | 00/839C : 22 26 2A 2E |              hex   22262A2E32363A3E
+  555 |  1    cs.s    510 | Data        | 11 |         |    8 | 00/839E : 22 26 2A 2E |              hex   22262A2E32363A3E
       |                   |             |    |         |      |           32 36 3A 3E |
-  552 |  1    cs.s    507 | Data        | 11 |         |    8 | 00/83A4 : 22 26 2A 2E |              hex   22262A2E32363A3E
+  556 |  1    cs.s    511 | Data        | 11 |         |    8 | 00/83A6 : 22 26 2A 2E |              hex   22262A2E32363A3E
       |                   |             |    |         |      |           32 36 3A 3E |
-  553 |  1    cs.s    508 | Data        | 11 |         |    8 | 00/83AC : 23 27 2B 2F |              hex   23272B2F33373B3F
+  557 |  1    cs.s    512 | Data        | 11 |         |    8 | 00/83AE : 23 27 2B 2F |              hex   23272B2F33373B3F
       |                   |             |    |         |      |           33 37 3B 3F |
-  554 |  1    cs.s    509 | Data        | 11 |         |    8 | 00/83B4 : 23 27 2B 2F |              hex   23272B2F33373B3F
+  558 |  1    cs.s    513 | Data        | 11 |         |    8 | 00/83B6 : 23 27 2B 2F |              hex   23272B2F33373B3F
       |                   |             |    |         |      |           33 37 3B 3F |
-  555 |  1    cs.s    510 | Data        | 11 |         |    8 | 00/83BC : 00 00 00 00 | lo           hex   0000000000000000; low byte of HGR memory address
+  559 |  1    cs.s    514 | Data        | 11 |         |    8 | 00/83BE : 00 00 00 00 | lo           hex   0000000000000000; low byte of HGR memory address
       |                   |             |    |         |      |           00 00 00 00 |
-  556 |  1    cs.s    511 | Data        | 11 |         |    8 | 00/83C4 : 80 80 80 80 |              hex   8080808080808080
+  560 |  1    cs.s    515 | Data        | 11 |         |    8 | 00/83C6 : 80 80 80 80 |              hex   8080808080808080
       |                   |             |    |         |      |           80 80 80 80 |
-  557 |  1    cs.s    512 | Data        | 11 |         |    8 | 00/83CC : 00 00 00 00 |              hex   0000000000000000
+  561 |  1    cs.s    516 | Data        | 11 |         |    8 | 00/83CE : 00 00 00 00 |              hex   0000000000000000
       |                   |             |    |         |      |           00 00 00 00 |
-  558 |  1    cs.s    513 | Data        | 11 |         |    8 | 00/83D4 : 80 80 80 80 |              hex   8080808080808080
+  562 |  1    cs.s    517 | Data        | 11 |         |    8 | 00/83D6 : 80 80 80 80 |              hex   8080808080808080
       |                   |             |    |         |      |           80 80 80 80 |
-  559 |  1    cs.s    514 | Data        | 11 |         |    8 | 00/83DC : 00 00 00 00 |              hex   0000000000000000
+  563 |  1    cs.s    518 | Data        | 11 |         |    8 | 00/83DE : 00 00 00 00 |              hex   0000000000000000
       |                   |             |    |         |      |           00 00 00 00 |
-  560 |  1    cs.s    515 | Data        | 11 |         |    8 | 00/83E4 : 80 80 80 80 |              hex   8080808080808080
+  564 |  1    cs.s    519 | Data        | 11 |         |    8 | 00/83E6 : 80 80 80 80 |              hex   8080808080808080
       |                   |             |    |         |      |           80 80 80 80 |
-  561 |  1    cs.s    516 | Data        | 11 |         |    8 | 00/83EC : 00 00 00 00 |              hex   0000000000000000
+  565 |  1    cs.s    520 | Data        | 11 |         |    8 | 00/83EE : 00 00 00 00 |              hex   0000000000000000
       |                   |             |    |         |      |           00 00 00 00 |
-  562 |  1    cs.s    517 | Data        | 11 |         |    8 | 00/83F4 : 80 80 80 80 |              hex   8080808080808080
+  566 |  1    cs.s    521 | Data        | 11 |         |    8 | 00/83F6 : 80 80 80 80 |              hex   8080808080808080
       |                   |             |    |         |      |           80 80 80 80 |
-  563 |  1    cs.s    518 | Data        | 11 |         |    8 | 00/83FC : 28 28 28 28 |              hex   2828282828282828
+  567 |  1    cs.s    522 | Data        | 11 |         |    8 | 00/83FE : 28 28 28 28 |              hex   2828282828282828
       |                   |             |    |         |      |           28 28 28 28 |
-  564 |  1    cs.s    519 | Data        | 11 |         |    8 | 00/8404 : A8 A8 A8 A8 |              hex   A8A8A8A8A8A8A8A8
+  568 |  1    cs.s    523 | Data        | 11 |         |    8 | 00/8406 : A8 A8 A8 A8 |              hex   A8A8A8A8A8A8A8A8
       |                   |             |    |         |      |           A8 A8 A8 A8 |
-  565 |  1    cs.s    520 | Data        | 11 |         |    8 | 00/840C : 28 28 28 28 |              hex   2828282828282828
+  569 |  1    cs.s    524 | Data        | 11 |         |    8 | 00/840E : 28 28 28 28 |              hex   2828282828282828
       |                   |             |    |         |      |           28 28 28 28 |
-  566 |  1    cs.s    521 | Data        | 11 |         |    8 | 00/8414 : A8 A8 A8 A8 |              hex   A8A8A8A8A8A8A8A8
+  570 |  1    cs.s    525 | Data        | 11 |         |    8 | 00/8416 : A8 A8 A8 A8 |              hex   A8A8A8A8A8A8A8A8
       |                   |             |    |         |      |           A8 A8 A8 A8 |
-  567 |  1    cs.s    522 | Data        | 11 |         |    8 | 00/841C : 28 28 28 28 |              hex   2828282828282828
+  571 |  1    cs.s    526 | Data        | 11 |         |    8 | 00/841E : 28 28 28 28 |              hex   2828282828282828
       |                   |             |    |         |      |           28 28 28 28 |
-  568 |  1    cs.s    523 | Data        | 11 |         |    8 | 00/8424 : A8 A8 A8 A8 |              hex   A8A8A8A8A8A8A8A8
+  572 |  1    cs.s    527 | Data        | 11 |         |    8 | 00/8426 : A8 A8 A8 A8 |              hex   A8A8A8A8A8A8A8A8
       |                   |             |    |         |      |           A8 A8 A8 A8 |
-  569 |  1    cs.s    524 | Data        | 11 |         |    8 | 00/842C : 28 28 28 28 |              hex   2828282828282828
+  573 |  1    cs.s    528 | Data        | 11 |         |    8 | 00/842E : 28 28 28 28 |              hex   2828282828282828
       |                   |             |    |         |      |           28 28 28 28 |
-  570 |  1    cs.s    525 | Data        | 11 |         |    8 | 00/8434 : A8 A8 A8 A8 |              hex   A8A8A8A8A8A8A8A8
+  574 |  1    cs.s    529 | Data        | 11 |         |    8 | 00/8436 : A8 A8 A8 A8 |              hex   A8A8A8A8A8A8A8A8
       |                   |             |    |         |      |           A8 A8 A8 A8 |
-  571 |  1    cs.s    526 | Data        | 11 |         |    8 | 00/843C : 50 50 50 50 |              hex   5050505050505050
+  575 |  1    cs.s    530 | Data        | 11 |         |    8 | 00/843E : 50 50 50 50 |              hex   5050505050505050
       |                   |             |    |         |      |           50 50 50 50 |
-  572 |  1    cs.s    527 | Data        | 11 |         |    8 | 00/8444 : D0 D0 D0 D0 |              hex   D0D0D0D0D0D0D0D0
+  576 |  1    cs.s    531 | Data        | 11 |         |    8 | 00/8446 : D0 D0 D0 D0 |              hex   D0D0D0D0D0D0D0D0
       |                   |             |    |         |      |           D0 D0 D0 D0 |
-  573 |  1    cs.s    528 | Data        | 11 |         |    8 | 00/844C : 50 50 50 50 |              hex   5050505050505050
+  577 |  1    cs.s    532 | Data        | 11 |         |    8 | 00/844E : 50 50 50 50 |              hex   5050505050505050
       |                   |             |    |         |      |           50 50 50 50 |
-  574 |  1    cs.s    529 | Data        | 11 |         |    8 | 00/8454 : D0 D0 D0 D0 |              hex   D0D0D0D0D0D0D0D0
+  578 |  1    cs.s    533 | Data        | 11 |         |    8 | 00/8456 : D0 D0 D0 D0 |              hex   D0D0D0D0D0D0D0D0
       |                   |             |    |         |      |           D0 D0 D0 D0 |
-  575 |  1    cs.s    530 | Data        | 11 |         |    8 | 00/845C : 50 50 50 50 |              hex   5050505050505050
+  579 |  1    cs.s    534 | Data        | 11 |         |    8 | 00/845E : 50 50 50 50 |              hex   5050505050505050
       |                   |             |    |         |      |           50 50 50 50 |
-  576 |  1    cs.s    531 | Data        | 11 |         |    8 | 00/8464 : D0 D0 D0 D0 |              hex   D0D0D0D0D0D0D0D0
+  580 |  1    cs.s    535 | Data        | 11 |         |    8 | 00/8466 : D0 D0 D0 D0 |              hex   D0D0D0D0D0D0D0D0
       |                   |             |    |         |      |           D0 D0 D0 D0 |
-  577 |  1    cs.s    532 | Data        | 11 |         |    8 | 00/846C : 50 50 50 50 |              hex   5050505050505050
+  581 |  1    cs.s    536 | Data        | 11 |         |    8 | 00/846E : 50 50 50 50 |              hex   5050505050505050
       |                   |             |    |         |      |           50 50 50 50 |
-  578 |  1    cs.s    533 | Data        | 11 |         |    8 | 00/8474 : D0 D0 D0 D0 |              hex   D0D0D0D0D0D0D0D0
+  582 |  1    cs.s    537 | Data        | 11 |         |    8 | 00/8476 : D0 D0 D0 D0 |              hex   D0D0D0D0D0D0D0D0
       |                   |             |    |         |      |           D0 D0 D0 D0 |
-  579 |  1    cs.s    534 | Comment     | 11 |         |    0 | 00/847C               | *
-  580 |  1    cs.s    535 | Empty       | 11 |         |    0 | 00/847C               |                                    
-  581 |  1    cs.s    536 | Empty       | 11 |         |    0 | 00/847C               |                                    
-  582 |  1    cs.s    537 | Data        | 11 |         |    1 | 00/847C : 00          | R1           hex   00              
-  583 |  1    cs.s    538 | Data        | 11 |         |    1 | 00/847D : 00          | R2           hex   00              
-  584 |  1    cs.s    539 | Data        | 11 |         |    1 | 00/847E : 00          | R3           hex   00              
-  585 |  1    cs.s    540 | Data        | 11 |         |    1 | 00/847F : 00          | R4           hex   00              
-  586 |  1    cs.s    541 | Comment     | 11 |         |    0 | 00/8480               | *
-  587 |  1    cs.s    542 | Code        | 11 |         |    3 | 00/8480 : 6E 7F 84    | RANDOM       ROR   R4              ; Bit 25 to carry
-  588 |  1    cs.s    543 | Code        | 11 |         |    3 | 00/8483 : AD 7E 84    |              LDA   R3              ; Shift left 8 bits
-  589 |  1    cs.s    544 | Code        | 11 |         |    3 | 00/8486 : 8D 7F 84    |              STA   R4              
-  590 |  1    cs.s    545 | Code        | 11 |         |    3 | 00/8489 : AD 7D 84    |              LDA   R2              
-  591 |  1    cs.s    546 | Code        | 11 |         |    3 | 00/848C : 8D 7E 84    |              STA   R3              
-  592 |  1    cs.s    547 | Code        | 11 |         |    3 | 00/848F : AD 7C 84    |              LDA   R1              
-  593 |  1    cs.s    548 | Code        | 11 |         |    3 | 00/8492 : 8D 7D 84    |              STA   R2              
-  594 |  1    cs.s    549 | Code        | 11 |         |    3 | 00/8495 : AD 7F 84    |              LDA   R4              ; Get original bits 17-24
-  595 |  1    cs.s    550 | Code        | 11 |         |    1 | 00/8498 : 6A          |              ROR                   ; Now bits 18-25 in ACC
-  596 |  1    cs.s    551 | Code        | 11 |         |    3 | 00/8499 : 2E 7C 84    |              ROL   R1              ; R1 holds bits 1-7
-  597 |  1    cs.s    552 | Code        | 11 |         |    3 | 00/849C : 4D 7C 84    |              EOR   R1              ; Seven bits at once
-  598 |  1    cs.s    553 | Code        | 11 |         |    3 | 00/849F : 6E 7F 84    |              ROR   R4              ; Shift right by one bit
-  599 |  1    cs.s    554 | Code        | 11 |         |    3 | 00/84A2 : 6E 7E 84    |              ROR   R3              
-  600 |  1    cs.s    555 | Code        | 11 |         |    3 | 00/84A5 : 6E 7D 84    |              ROR   R2              
-  601 |  1    cs.s    556 | Code        | 11 |         |    1 | 00/84A8 : 6A          |              ROR                   
-  602 |  1    cs.s    557 | Code        | 11 |         |    3 | 00/84A9 : 8D 7C 84    |              STA   R1              
-  603 |  1    cs.s    558 | Code        | 11 |         |    1 | 00/84AC : 60          |              RTS                   
-  604 |  1    cs.s    559 | Empty       | 11 |         |    0 | 00/84AD               |                                    
-  605 |  1    cs.s    560 | Comment     | 11 |         |    0 | 00/84AD               | *Here is a routine to seed the random number generator with a
-  606 |  1    cs.s    561 | Comment     | 11 |         |    0 | 00/84AD               | *reasonable initial value:
-  607 |  1    cs.s    562 | Empty       | 11 |         |    0 | 00/84AD               |                                    
-  608 |  1    cs.s    563 | Empty       | 11 |         |    0 | 00/84AD               | INITRAND                           
-  609 |  1    cs.s    564 | Code        | 11 |         |    2 | 00/84AD : A5 4E       |              LDA   $4E             ; Seed the random number generator
-  610 |  1    cs.s    565 | Code        | 11 |         |    3 | 00/84AF : 8D 7C 84    |              STA   R1              ; based on delay between keypresses
-  611 |  1    cs.s    566 | Code        | 11 |         |    3 | 00/84B2 : 8D 7E 84    |              STA   R3              
-  612 |  1    cs.s    567 | Code        | 11 |         |    2 | 00/84B5 : A5 4F       |              LDA   $4F             
-  613 |  1    cs.s    568 | Code        | 11 |         |    3 | 00/84B7 : 8D 7D 84    |              STA   R2              
-  614 |  1    cs.s    569 | Code        | 11 |         |    3 | 00/84BA : 8D 7F 84    |              STA   R4              
-  615 |  1    cs.s    570 | Code        | 11 |         |    2 | 00/84BD : A2 20       |              LDX   #$20            ; Generate a few random numbers
-  616 |  1    cs.s    571 | Code        | 11 |         |    3 | 00/84BF : AE 7C 84    |              ldx   R1              
-  617 |  1    cs.s    572 | Code        | 11 |         |    3 | 00/84C2 : 20 80 84    | INITLOOP     JSR   RANDOM          ; to kick things off
-  618 |  1    cs.s    573 | Code        | 11 |         |    1 | 00/84C5 : CA          |              DEX                   
-  619 |  1    cs.s    574 | Code        | 11 |         |    3 | 00/84C6 : 20 AE EF    |              jsr   {$EFAE}         
-  620 |  1    cs.s    575 | Code        | 11 |         |    2 | 00/84C9 : D0 F7       |              BNE   INITLOOP        
-  621 |  1    cs.s    576 | Code        | 11 |         |    1 | 00/84CB : 60          |              RTS                   
-  622 |  1    cs.s    577 | Empty       | 11 |         |    0 | 00/84CC               |                                    
-  623 |  1    cs.s    578 | Comment     | 11 |         |    0 | 00/84CC               | *Now to wrap this in a "fill the hi-res graphics screen" routine:
-  624 |  1    cs.s    579 | Empty       | 11 |         |    0 | 00/84CC               |                                    
-  625 |  1    cs.s    580 | Code        | 11 |         |    3 | 00/84CC : 20 AD 84    | NOISEGEN     JSR   INITRAND        ; Seed the random number generator
-  626 |  1    cs.s    581 | Code        | 11 |         |    2 | 00/84CF : A9 00       |              LDA   #$00            
-  627 |  1    cs.s    582 | Code        | 11 |         |    2 | 00/84D1 : 85 3C       |              STA   $3C             ; Borrow monitor variables for a pointer
-  628 |  1    cs.s    583 | Code        | 11 |         |    2 | 00/84D3 : A9 20       |              LDA   #$20            
-  629 |  1    cs.s    584 | Code        | 11 |         |    2 | 00/84D5 : 85 3D       |              STA   $3D             
-  630 |  1    cs.s    585 | Code        | 11 |         |    2 | 00/84D7 : A0 00       |              LDY   #$00            ; Initialize the offset
-  631 |  1    cs.s    586 | Code        | 11 |         |    2 | 00/84D9 : A2 20       |              LDX   #$20            ; and the page count
-  632 |  1    cs.s    587 | Code        | 11 |         |    3 | 00/84DB : 20 80 84    | FILLLOOP     JSR   RANDOM          
-  633 |  1    cs.s    588 | Code        | 11 |         |    2 | 00/84DE : 91 3C       |              STA   ($3C),Y         
-  634 |  1    cs.s    589 | Code        | 11 |         |    1 | 00/84E0 : C8          |              INY                   
-  635 |  1    cs.s    590 | Code        | 11 |         |    2 | 00/84E1 : D0 F8       |              BNE   FILLLOOP        
-  636 |  1    cs.s    591 | Code        | 11 |         |    2 | 00/84E3 : E6 3D       |              INC   $3D             
-  637 |  1    cs.s    592 | Code        | 11 |         |    1 | 00/84E5 : CA          |              DEX                   
-  638 |  1    cs.s    593 | Code        | 11 |         |    2 | 00/84E6 : D0 F3       |              BNE   FILLLOOP        
-  639 |  1    cs.s    594 | Code        | 11 |         |    1 | 00/84E8 : 60          |              RTS                   
+  583 |  1    cs.s    538 | Comment     | 11 |         |    0 | 00/847E               | *
+  584 |  1    cs.s    539 | Empty       | 11 |         |    0 | 00/847E               |                                    
+  585 |  1    cs.s    540 | Empty       | 11 |         |    0 | 00/847E               |                                    
+  586 |  1    cs.s    541 | Data        | 11 |         |    1 | 00/847E : 00          | R1           hex   00              
+  587 |  1    cs.s    542 | Data        | 11 |         |    1 | 00/847F : 00          | R2           hex   00              
+  588 |  1    cs.s    543 | Data        | 11 |         |    1 | 00/8480 : 00          | R3           hex   00              
+  589 |  1    cs.s    544 | Data        | 11 |         |    1 | 00/8481 : 00          | R4           hex   00              
+  590 |  1    cs.s    545 | Comment     | 11 |         |    0 | 00/8482               | *
+  591 |  1    cs.s    546 | Code        | 11 |         |    3 | 00/8482 : 6E 81 84    | RANDOM       ROR   R4              ; Bit 25 to carry
+  592 |  1    cs.s    547 | Code        | 11 |         |    3 | 00/8485 : AD 80 84    |              LDA   R3              ; Shift left 8 bits
+  593 |  1    cs.s    548 | Code        | 11 |         |    3 | 00/8488 : 8D 81 84    |              STA   R4              
+  594 |  1    cs.s    549 | Code        | 11 |         |    3 | 00/848B : AD 7F 84    |              LDA   R2              
+  595 |  1    cs.s    550 | Code        | 11 |         |    3 | 00/848E : 8D 80 84    |              STA   R3              
+  596 |  1    cs.s    551 | Code        | 11 |         |    3 | 00/8491 : AD 7E 84    |              LDA   R1              
+  597 |  1    cs.s    552 | Code        | 11 |         |    3 | 00/8494 : 8D 7F 84    |              STA   R2              
+  598 |  1    cs.s    553 | Code        | 11 |         |    3 | 00/8497 : AD 81 84    |              LDA   R4              ; Get original bits 17-24
+  599 |  1    cs.s    554 | Code        | 11 |         |    1 | 00/849A : 6A          |              ROR                   ; Now bits 18-25 in ACC
+  600 |  1    cs.s    555 | Code        | 11 |         |    3 | 00/849B : 2E 7E 84    |              ROL   R1              ; R1 holds bits 1-7
+  601 |  1    cs.s    556 | Code        | 11 |         |    3 | 00/849E : 4D 7E 84    |              EOR   R1              ; Seven bits at once
+  602 |  1    cs.s    557 | Code        | 11 |         |    3 | 00/84A1 : 6E 81 84    |              ROR   R4              ; Shift right by one bit
+  603 |  1    cs.s    558 | Code        | 11 |         |    3 | 00/84A4 : 6E 80 84    |              ROR   R3              
+  604 |  1    cs.s    559 | Code        | 11 |         |    3 | 00/84A7 : 6E 7F 84    |              ROR   R2              
+  605 |  1    cs.s    560 | Code        | 11 |         |    1 | 00/84AA : 6A          |              ROR                   
+  606 |  1    cs.s    561 | Code        | 11 |         |    3 | 00/84AB : 8D 7E 84    |              STA   R1              
+  607 |  1    cs.s    562 | Code        | 11 |         |    1 | 00/84AE : 60          |              RTS                   
+  608 |  1    cs.s    563 | Empty       | 11 |         |    0 | 00/84AF               |                                    
+  609 |  1    cs.s    564 | Comment     | 11 |         |    0 | 00/84AF               | *Here is a routine to seed the random number generator with a
+  610 |  1    cs.s    565 | Comment     | 11 |         |    0 | 00/84AF               | *reasonable initial value:
+  611 |  1    cs.s    566 | Empty       | 11 |         |    0 | 00/84AF               |                                    
+  612 |  1    cs.s    567 | Empty       | 11 |         |    0 | 00/84AF               | INITRAND                           
+  613 |  1    cs.s    568 | Code        | 11 |         |    2 | 00/84AF : A5 4E       |              LDA   $4E             ; Seed the random number generator
+  614 |  1    cs.s    569 | Code        | 11 |         |    3 | 00/84B1 : 8D 7E 84    |              STA   R1              ; based on delay between keypresses
+  615 |  1    cs.s    570 | Code        | 11 |         |    3 | 00/84B4 : 8D 80 84    |              STA   R3              
+  616 |  1    cs.s    571 | Code        | 11 |         |    2 | 00/84B7 : A5 4F       |              LDA   $4F             
+  617 |  1    cs.s    572 | Code        | 11 |         |    3 | 00/84B9 : 8D 7F 84    |              STA   R2              
+  618 |  1    cs.s    573 | Code        | 11 |         |    3 | 00/84BC : 8D 81 84    |              STA   R4              
+  619 |  1    cs.s    574 | Code        | 11 |         |    2 | 00/84BF : A2 20       |              LDX   #$20            ; Generate a few random numbers
+  620 |  1    cs.s    575 | Code        | 11 |         |    3 | 00/84C1 : AE 7E 84    |              ldx   R1              
+  621 |  1    cs.s    576 | Code        | 11 |         |    3 | 00/84C4 : 20 82 84    | INITLOOP     JSR   RANDOM          ; to kick things off
+  622 |  1    cs.s    577 | Code        | 11 |         |    1 | 00/84C7 : CA          |              DEX                   
+  623 |  1    cs.s    578 | Code        | 11 |         |    3 | 00/84C8 : 20 AE EF    |              jsr   {$EFAE}         
+  624 |  1    cs.s    579 | Code        | 11 |         |    2 | 00/84CB : D0 F7       |              BNE   INITLOOP        
+  625 |  1    cs.s    580 | Code        | 11 |         |    1 | 00/84CD : 60          |              RTS                   
+  626 |  1    cs.s    581 | Empty       | 11 |         |    0 | 00/84CE               |                                    
+  627 |  1    cs.s    582 | Comment     | 11 |         |    0 | 00/84CE               | *Now to wrap this in a "fill the hi-res graphics screen" routine:
+  628 |  1    cs.s    583 | Empty       | 11 |         |    0 | 00/84CE               |                                    
+  629 |  1    cs.s    584 | Code        | 11 |         |    3 | 00/84CE : 20 AF 84    | NOISEGEN     JSR   INITRAND        ; Seed the random number generator
+  630 |  1    cs.s    585 | Code        | 11 |         |    2 | 00/84D1 : A9 00       |              LDA   #$00            
+  631 |  1    cs.s    586 | Code        | 11 |         |    2 | 00/84D3 : 85 3C       |              STA   $3C             ; Borrow monitor variables for a pointer
+  632 |  1    cs.s    587 | Code        | 11 |         |    2 | 00/84D5 : A9 20       |              LDA   #$20            
+  633 |  1    cs.s    588 | Code        | 11 |         |    2 | 00/84D7 : 85 3D       |              STA   $3D             
+  634 |  1    cs.s    589 | Code        | 11 |         |    2 | 00/84D9 : A0 00       |              LDY   #$00            ; Initialize the offset
+  635 |  1    cs.s    590 | Code        | 11 |         |    2 | 00/84DB : A2 20       |              LDX   #$20            ; and the page count
+  636 |  1    cs.s    591 | Code        | 11 |         |    3 | 00/84DD : 20 82 84    | FILLLOOP     JSR   RANDOM          
+  637 |  1    cs.s    592 | Code        | 11 |         |    2 | 00/84E0 : 91 3C       |              STA   ($3C),Y         
+  638 |  1    cs.s    593 | Code        | 11 |         |    1 | 00/84E2 : C8          |              INY                   
+  639 |  1    cs.s    594 | Code        | 11 |         |    2 | 00/84E3 : D0 F8       |              BNE   FILLLOOP        
+  640 |  1    cs.s    595 | Code        | 11 |         |    2 | 00/84E5 : E6 3D       |              INC   $3D             
+  641 |  1    cs.s    596 | Code        | 11 |         |    1 | 00/84E7 : CA          |              DEX                   
+  642 |  1    cs.s    597 | Code        | 11 |         |    2 | 00/84E8 : D0 F3       |              BNE   FILLLOOP        
+  643 |  1    cs.s    598 | Code        | 11 |         |    1 | 00/84EA : 60          |              RTS                   
 ------+-------------------+-------------+----+---------+------+-----------------------+-------------------------------------------------------------------
