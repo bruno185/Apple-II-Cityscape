@@ -2,7 +2,7 @@
  Line | # File       Line | Line Type   | MX |  Reloc  | Size | Address   Object Code |  Source Code                                                      
 ------+-------------------+-------------+----+---------+------+-----------------------+-------------------------------------------------------------------
     1 |  1    cs.s      1 | Comment     | 11 |         |    0 | 00/8000               | *
-    2 |  1    cs.s      2 | Comment     | 11 |         |    0 | 00/8000               | * Remake in assembly language of "Cityscape", one of the short program of Lee Fastenau - thelbane.
+    2 |  1    cs.s      2 | Comment     | 11 |         |    0 | 00/8000               | * Remake in assembly language of "Cityscape", one of the short programs of Lee Fastenau - thelbane.
     3 |  1    cs.s      3 | Comment     | 11 |         |    0 | 00/8000               | * https://github.com/thelbane/Apple-II-Programs 
     4 |  1    cs.s      4 | Comment     | 11 |         |    0 | 00/8000               | *
     5 |  1    cs.s      5 | Comment     | 11 |         |    0 | 00/8000               | * For HGR, HPLOT etc. see "Inside the Apple IIe.pdf" p. 276
