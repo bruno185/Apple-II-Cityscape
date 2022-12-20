@@ -67,7 +67,7 @@ debut
     jsr rdkey       ; read user choice
     pha
     jsr initrandom  ; init random with $4e/$4f
-    jsr savfac
+    jsr savfac      ; sav "random" fac
     pla
     cmp #"S"    ; slow ?
     beq slow
@@ -103,9 +103,8 @@ init
     lda #$00
     sta passe
     sta xend
-    lda #$00
     sta xstart
-    jsr getfac
+    jsr getfac      ; restrore "random" fac
 
 bigloop
     lda #$00
