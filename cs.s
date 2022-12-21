@@ -32,7 +32,7 @@ MOVAF   equ $EB63       ; Move FAC into ARG. On exit A=FACEXP and Z is set
 CONINT  equ $E6FB        ; Convert FAC into a single byte number in X and FACLO
 YTOFAC  equ $E301
 MOVMF   equ $EB2B       ; Routine to pack FP number. Address of destination must be in Y
-          ; (high) and X (low). Result is packed from FAC
+                        ; (high) and X (low). Result is packed from FAC
 QUINT   equ $EBF2       ; convert fac to 16bit INT at $A0 and $A1
 STROUT  equ $DB3A       ; 
 
