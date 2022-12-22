@@ -1,5 +1,5 @@
 *
-* Remake in assembly language of "Cityscape", one of the short programs of Lee Fastenau - thelbane.
+* Remake in assembly of "Cityscape", one of the short programs of Lee Fastenau thelbane.
 * https://github.com/thelbane/Apple-II-Programs 
 *
 * For HGR, HPLOT etc. see "Inside the Apple IIe.pdf" p. 276
