@@ -496,8 +496,11 @@ myfac hex ffffffffffffff
 fleche asc "===> "
         hex 00
 
-welcome asc "          Welcome to CityScape !"
-    hex 8d8d8d00
+welcome 
+    hex 8d8d8d
+    asc "          Welcome to CityScape !"
+    hex 8d8d8d8d8d8d
+    hex 00
 
 choix asc "   Choose : <S>low    <F>ast   <E>xit "
     hex 8d8d
