@@ -11,7 +11,7 @@
 * Poms 18
 * Poms 20
 * "Apple_Programmers_Handbook_1984.pdf"
-* Inside the Apple IIe.pdf"
+* "Inside the Apple IIe.pdf"
 ****
 
 ****** FP routines ******
@@ -29,7 +29,7 @@ FDIVT   equ $EA69       ; FAC = FAC / ARG
 RND     equ $EFAE       ; FAC = random number
 FOUT    equ $ED34       ; Create a string at the start of the stack ($100−$110)
 MOVAF   equ $EB63       ; Move FAC into ARG. On exit A=FACEXP and Z is set
-CONINT  equ $E6FB        ; Convert FAC into a single byte number in X and FACLO
+CONINT  equ $E6FB       ; Convert FAC into a single byte number in X and FACLO
 YTOFAC  equ $E301
 MOVMF   equ $EB2B       ; Routine to pack FP number. Address of destination must be in Y
                         ; (high) and X (low). Result is packed from FAC
@@ -64,11 +64,12 @@ debut
     ldy #>choix     ; print choice string
     lda #<choix
     jsr STROUT
-    jsr rdkey       ; read user choice
-    pha
+    ;jsr rdkey       ; read user choice
+    jsr myrdkey     ; read user choice, without blinling cursor
+    pha             ; save user choice 
     jsr initrandom  ; init random with $4e/$4f
     jsr savfac      ; sav "random" fac
-    pla
+    pla             ; restore user choice
     cmp #"S"    ; slow ?
     beq slow
     cmp #"s"    ; slow ?
@@ -91,7 +92,7 @@ slow
     sta speed
     jmp debut2
 fast 
-    lda #01
+    lda #0
     sta speed
     jmp debut2
 
@@ -218,7 +219,9 @@ nextligne
 
     sta (ptr),y     ; plot !
     lda speed
+    beq nowait
     jsr wait
+nowait
     lda hauteur     ; next black line to plot
     clc
     adc interligne  ; interligne was calculated before 
@@ -226,7 +229,6 @@ nextligne
     cmp #191        ; bottom of screen ?
     bcc nextligne   ; no : plot next line
     beq nextligne
-    ;jsr rdkey
 
     lda savhauteur  ; get original hauteur (hauteur of building)
     sta hauteur     ; ==> into var hauteur
@@ -247,7 +249,6 @@ nextligne
     jmp mloop
 
 nextpasse
-    ;jsr rdkey
     inc passe       ; another loop ?
     lda passe
     cmp #$04        ; 4 loops done ?
@@ -265,6 +266,19 @@ readk
 
 
 *********** UTIL ****************
+
+myrdkey
+; my own "rdkey" routine, to void blinking cursor
+    lda kbd     ; read keyboard
+    pha         ; save key pressed
+    inc $4e     ; inc random word
+    bne noinc
+    inc $4f
+noinc
+    pla         ; restore key pressed
+    bpl myrdkey ; any ket pressed ?
+    bit kbdstrb ; clear keyboard
+    rts
 
 initrandom
 * $EFAE (RND) : APPLESOFT FP - FORM A 'RANDOM' NUMBER IN fAC USING ORIGINAl VALUE IN FAC AS
@@ -321,7 +335,7 @@ doline
 ***
 
 *** debug routine
-* print hauteur, x start, xend
+* print hauteur, xstart, xend
 debug
     lda hauteur
     sta value
